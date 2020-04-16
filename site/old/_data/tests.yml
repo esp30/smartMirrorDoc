@@ -1,0 +1,18 @@
+- title: Mobile App
+  category: End-User
+  text: ""
+  steps: ["1. The app must create the new account and notify the user that the action is complete.", "2. The app must save all the changes and notify the user that the alterations were successfully saved.", "3. After input of dishes eaten, the app must show all the statistics calculated with reasonable values. The app must show all the goals the user set and its evolution."]
+  canteen: false
+
+- title: At canteens
+  category: End-User
+  text: ""
+  steps: ["4. The system must notify the user if he was successfully authenticated", "5. The system must detect from which tray the user served", "6. The system must measure precisely the amount of food served in the plate and show in the display the plate's macros actualized", "7. The system must detect when the user is finished and upload the new data to its account"]
+  canteen: false
+
+- title: At canteens
+  category: Canteen Worker
+  text: ""
+  steps: ["9. The system must add the menu of the day and notify the user that the action was successfully completed."]
+  canteen: true
+

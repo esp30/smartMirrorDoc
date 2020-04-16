@@ -1,0 +1,107 @@
+---
+layout: page
+title: Manual
+description: "How to use our system?"
+button: true
+button-ref: "/assets/docs/UserManual.pdf"
+button-description: Detailed User Manual
+comments: false
+header-image: true
+header-path: "images/home-2.jpg"
+---
+
+<div id="end-user">
+    <div class="title" style="text-align: center">
+        <h2>If you're an user trying to control your food portions...</h2>
+        <h3 data-toc-skip>You can interact with our system either using the user application or at the canteen.<br>Follow these steps to start using our system</h3>
+    </div>
+</div>
+
+    <br>
+
+    <div id="end-user-app">
+        <img data-toggle="tooltip" data-placement="right" title="Interface for editing the profile and for viewing the meals history" src="{{site.assets}}/images/end-user-mockups.png" alt="End-User App UI Mockups" style="float: left; max-width:50%; max-height:70%; overflow: auto; "></img>
+        <!-- <img class="center" src="{{site.assets}}/images/end-user-mockups.png" alt="End-User App UI Mockups" style="float: right; max-width:50%; max-height:70%; display: block; margin-left: auto; margin-right: auto;"></img> -->
+
+        <h4 data-toc-skip class="title" style="text-align: center">1. First, you'll need to create an account using with our app</h4>
+        {% for manual-entry in site.data.manual %}
+        {% if manual-entry.canteen == false and manual-entry.title == 'Mobile App' %}
+            <ul class="list-group list-group-flush">
+                {% for step in manual-entry.steps %} 
+                <li class="list-group-item">{{step}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+    
+    <div id="end-user-canteen">
+        <div class="title" style="text-align: center; clear:both">
+            <br>
+        </div>
+        
+        
+        <h4 data-toc-skip class="title" style="text-align: center">2. Second, head to your canteen</h4>
+        <img data-toggle="tooltip" data-placement="bottom" title="What you'll see in each food stand  display to help you with step 3 " src="{{site.assets}}/images/canteen-mockups.png" alt="End-User App UI Mockups" style="float: top; max-width:100%; max-height:10s0%; overflow: auto; "></img>
+        {% for manual-entry in site.data.manual %}
+        {% if manual-entry.canteen == false and manual-entry.title != 'Mobile App' %}
+            <ul class="list-group list-group-flush">
+                {% for step in manual-entry.steps %} 
+                <li class="list-group-item">{{step}}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+<div id="canteen-workers">
+    <div class="title" style="text-align: center; clear:both">
+            <br>
+            <h2>If you work at or for the canteen...</h2>
+            <h3 data-toc-skip>You can interact with our system using the canteen control interface.</h3>
+        </div>
+    <br>
+
+    <div id="canteen-workers-create-account">
+        <h4 data-toc-skip class="title" style="text-align: center">1. First, you'll need to create an account using with our app</h4>
+    </div>
+
+    <div id="canteen-workers-create-recipe">
+        <img data-toggle="tooltip" data-placement="right" title="Interface for adding a new recipe" src="{{site.assets}}/images/canteen-add-recipe.png" alt="Canteen Add Recipe" style="float: right; max-width:50%; max-height:70%; overflow: auto; "></img>
+
+        <h4 data-toc-skip class="title" style="text-align: center">2. Add your recipes</h4>
+        &nbsp;Recipes have 1 or more ingredients that can be chosen from a predefined list of foods.
+    </div>
+        
+    <div id="end-user-canteen">
+        <div class="title" style="text-align: center; clear:both">
+            <br>
+        </div>
+        
+        <img data-toggle="tooltip" data-placement="bottom" title="Interface for adding a new menu of the day" src="{{site.assets}}/images/canteen-add-menu.png" alt="Canteen Add Menu" style="float: right; max-width:50%; max-height:70%; overflow: auto; "></img>
+        
+        <h4 data-toc-skip class="title" style="text-align: center">3. Create the menu of the day</h4>
+        Canteen workers can create and edit the menu of the day by adding or removing previously created recipes. 
+    </div>
+        
+    <!-- <div class="card-deck">
+        {% for manual-entry in site.data.manual %}
+        {% if manual-entry.canteen == true %}
+        <div class="card" style="width: 20rem;">
+                <div class="card-header card-header-info">
+                    <a style="font-weight: bold">{{manual-entry.title}}</a>
+                    <p class="category">For: {{manual-entry.category}}</p>
+                </div>
+        
+                <ul class="list-group list-group-flush">
+                    {% for step in manual-entry.steps %} 
+                        <li class="list-group-item">{{step}}</li>
+                    {% endfor %}
+                </ul>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>     -->
+</div>    
+
+

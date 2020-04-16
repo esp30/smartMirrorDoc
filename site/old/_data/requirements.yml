@@ -1,0 +1,31 @@
+
+
+- module: Canteen Control Unit
+  requirements: ['1.	The CCU must be able to communicate to the server by sending a HTTP Request and being answered with a HTTP Response', '2.	MQTT QoS (assure message is delivered and only once)', '3.	MQTT Security', 4.	Check for connection to server']
+  integration-tests: ['1.	HTTP Request /tests/serverCCU  to prove the connection between the modules']
+  unit-tests: ['1.	Adapt scripts (both sensors and CCU)', '2.	Tunnelling MQTT over SSH', '3.	Store information until connection is established']
+
+- module: Processing Module at the Canteen Control Unit
+  requirements: ['1.	Verify all methods return JSON correctly formatted', '2.	Guarantee compliance to all essential nutritional standards after calculations.']
+  integration-tests: ['Part of the Canteen Control Unit. See its integration tests']
+  unit-tests: ['1.	Testing Scripts shall be done and ran whenever new code is written.', '2.	A nutritionist shall be consulted to verify if the module follows nutritional standards.']
+
+- module: Mobile App
+  requirements: ['1.	The app must be able to create a connection with the server', '2.	The app must be able to send information to the server whenever there is a data update', '3.	Send the correct information of the user', '4.	Send JSON correctly formatted', '5.	Responsive app', '6.	Show a message when the user inputs invalid data']
+  integration-tests: ['1.	App will use HTTP Request /tests/serverAPP to prove the connection between the modules']
+  unit-tests: ['1.	Heuristic Usability Evaluation' , '2.	Testing scripts to verify individual methods.']
+
+- module: Food Stand Sensors
+  requirements: ['1.	The sensors modules must be able to publish on the corresponding MQTT topic', '2.	Check sensors calibration (guarantee accurate tare of sensor values and accurate increase of value)', '3.	Check for breaking bugs in critical functions']
+  integration-tests: ['1.	Publish test messages to the corresponding MQTT topics.' , '2.	Check for data integrity.']
+  unit-tests: ['1.	Accuracy tests', '1.1	Ensure “boot time” used to interpret value as 0g based on an average recorded during that time', '1.2	Usage of accurate weight (1Kg) to establish relation between value increase and the equivalent real weight value', '2.	Extensive stress testing and code revisions']
+
+- module: Server
+  requirements: ['1.	The server must be able to create a connection with the database', '2.	The server must be able to read and write from the Database', '3.	Verify all functions return proper values associated with existing canteens and users', '4.	All functions must return error when the user or canteen does not exist', '5.	The server should be capable of handling multiple requests at the same time']
+  integration-tests: ['1.	Test connection method: create a connection, perform an Insert Query and then a Selection Query on the same inserted data.']
+  unit-tests: [' 1.	Design by contract', '2.	Testing scripts shall be done and ran whenever new code is written.', '3.	Usage of a proper applicational server on top of the Flask framework. Stress testing the server.']
+
+- module: Database
+  requirements: ['1.	The database must be able to respond to server requests', '2.	The database must be updatable without interfering with previous data.', '3.	Verify all methods return JSON correctly formatted', '4.	Verify all methods return correct tables', '5.	Verify all methods return exceptions in case of error. Programming (wrong data type) errors must be identified.']
+  integration-tests: ['1.	Test connection method: create a connection, perform an Insert Query and then a Selection Query on the same inserted data.']
+  unit-tests: ['1.	Testing Scripts shall be done to simulate the insertion, retrieval and removal of data']

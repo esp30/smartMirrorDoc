@@ -1,0 +1,40 @@
+---
+layout: page
+title: Requirements
+description: "What our system is supposed to do... with geeky details"
+button: false
+button_ref: None
+button_description: None
+comments: false
+header-image: true
+header-path: "images/developers.jpg"
+toc: false
+---
+
+
+
+<table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Module</th>
+            <th>Requirements</th>
+        </tr>
+        </thead>
+        
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+            {% for requirement in site.data.requirements %}
+            <tr>
+                <th scope="row">{{ requirement.module }}</th>
+                <td>
+                    {% for req in requirement.requirements %}
+                    {{ req }} <br>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    

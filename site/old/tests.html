@@ -1,0 +1,257 @@
+---
+layout: page
+title: Quality Assurance
+description: "How we assess our system works"
+button: true
+button-ref: "/assets/docs/QA.pdf"
+button-description: "QA Report + Risk Assessment"
+header-image: true
+header-path: "images/developers.jpg"
+toc: true
+---
+
+
+<div id="acceptance-tests">
+    <div class="title" style="text-align: center">
+        <h2>How we test our system</h2>
+        
+    </div>
+    Each module has 1+ responsibles (available in <a href="http://xcoa.av.it.pt/~pei2018-2019_g08/logbook.html">Log Book</a>) responsible for defining unitary tests for each module, according to the <a href="http://xcoa.av.it.pt/~pei2018-2019_g08/requirements.html">Requirements</a>.<br>
+    Then the responsibles for the modules decide between them will be integration tests<br>
+    The whole team decides the acceptance tests and system overall tests, based on the usage scenarios (available in <a href="http://xcoa.av.it.pt/~pei2018-2019_g08/vision.html">Persona and Scenarios</a><br>
+    The end result is the <a href="http://xcoa.av.it.pt/~pei2018-2019_g08/assets/docs/QA.pdf">QA report</a>.
+</div>
+
+<div id="acceptance-tests">
+    <div class="title" style="text-align: center">
+        <h2>Final Results</h2>
+    </div>
+
+    In addition to the unitary and integration tests done during development, in the final release (Milestone 6), a set of videos were created to showcase that both <a href="http://xcoa.av.it.pt/~pei2018-2019_g08/vision.html">scenarios </a> (User at the Canteen and Canteen Worker adds a new meal of the day) are fullfilled. See it <a href="https://www.youtube.com/watch?v=-d4_4PYNAwY&list=PLjof47ZuidU_wSRm0dhgoR6hi6VYozy4k">here</a>.
+</div>
+
+<div id="acceptance-tests">
+    <div class="title" style="text-align: center">
+        <h2>Results as of Milestone 5</h2>
+        
+    </div>
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>MVP Scenario</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <th scope="row">Scenario 1. User at the Canteen</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">1A. User Identifies Him/herself upon entrance</th>
+                <td>Working. User is identified using a contactless proximity MIFARE card</td>
+            </tr>
+            <tr>
+                <th scope="row">1B. Precalculation of the advised portions</th>
+                <td>Working. Predefined user information is used to calculate how much of each food can still be eaten by the user</td>
+            </tr>
+            <tr>
+                <th scope="row">1C. Measure the weight of the contents in the food plate</th>
+                <td>Working. The weight sensor can correctly measure weight with a precision of 0.01g</td>
+            </tr>
+            <tr>
+                <th scope="row">1D. Identify what ingredient is being taken of the containers</th>
+                <td>Working. The ultrassonic sensors are working as presence sensors and can automatically identify from which container the food is being taken of</td>
+            </tr>
+            <tr>
+                <th scope="row">1E. Stand display shows the users advised portion sizes for each available food</th>
+                <td>Validation under way (not fully tested as of 27th May)</td>
+            </tr>
+
+            <tr>
+                <th scope="row">Scenario 2. Canteen Worker adds a new meal of the day</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">2A. Create a new recipe</th>
+                <td>Validation under way (not fully tested as of 27th May)</td>
+            </tr>
+
+            <tr>
+                <th scope="row">2B. Create the menus for the next week</th>
+                <td>Validation under way (not fully tested as of 27th May)</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div id="acceptance-tests">
+    <div class="title" style="text-align: center">
+        <h2>Results as of Milestone 4</h2>
+        
+    </div>
+    For this Milestone, even if at a shallow level, the various modules already went through some testing to guarantee their quality.
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Module</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+                <th scope="row">Server API / Database</th>
+                <td>The connection between the API and the database was extensively tested via HTTP Requests, to guarantee it’s functioning correctly. · It was concluded that the functions handle the data correctly, but the response times are above what we were expecting.</td>
+            </tr>
+            <tr>
+                <th scope="row">CCU Processing Module</th>
+                <td>A nutritionist was consulted to check the if the calculations done by this module were factually correct.</td>
+            </tr>
+            <tr>
+                <th scope="row">Stand Controller</th>
+                <td>The MQTT broker was stress tested to check if it could handle big volume of usage. · At 50000 messages per millisecond, the module fulfilled our expectations</td>
+            </tr>
+            <tr>
+                <th scope="row">Stand Displays Interface</th>
+                <td>Validation under way. Only visual validation was done and results shall be presented in Demo 2.</td>
+            </tr>
+            <tr>
+                <th scope="row">Sensors</th>
+                <td>Validation under way</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    For visuals and a more through examination of this milestone QA results, consult the updated QA Report.
+</div>
+
+<div id="acceptance-tests">
+    <div class="title" style="text-align: center">
+        <h2>Acceptance Tests</h2>
+        
+    </div>
+</div>
+
+<br>
+
+    <div id="end-user">
+        <div class="title" style="text-align: center">
+            <h3>On the End-User Side</h3>
+        </div>
+        
+        <div class="card-deck">
+            {% for test in site.data.tests %}
+            {% if test.canteen == false %}
+            <div class="card" style="width: 20rem;">
+                    <div class="card-header card-header-info">
+                        <a style="font-weight: bold">{{test.title}}</a>
+                        <p class="category">For: {{test.category}}</p>
+                    </div>
+                    
+                    <ul class="list-group list-group-flush">
+                        {% for step in test.steps %} 
+                        <li class="list-group-item">{{step}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>    
+    </div>    
+        
+    <div id="canteen">
+        <div class="title" style="text-align: center">
+                <h3>On the Canteen Workers Side</h3>
+        </div>
+
+        <br>
+            
+        <div class="card-deck">
+            {% for test in site.data.manual %}
+            {% if test.canteen == false %}
+        <div class="card" style="width: 20rem;">
+                <div class="card-header card-header-info">
+                    <a style="font-weight: bold">{{test.title}}</a>
+                    <p class="category">For: {{test.category}}</p>
+                </div>
+                
+                <ul class="list-group list-group-flush">
+                    {% for step in test.steps %} 
+                    <li class="list-group-item">{{step}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>    
+    </div>    
+
+
+<div id="integration-tests">
+    <div class="title" style="text-align: center">
+            <h2>Integration Tests</h2>
+    </div>
+
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Module</th>
+            <th>Integration Tests</th>
+        </tr>
+        </thead>
+        
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+            {% for requirement in site.data.requirements %}
+            <tr>
+                <th scope="row">{{ requirement.module }}</th>
+                <td>
+                    {% for test in requirement.integration-tests %}
+                    {{ test }} <br>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>         
+</div>
+
+<div id="unit-tests">
+    <div class="title" style="text-align: center">
+            <h2>Unit Tests</h2>
+    </div>
+
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Module</th>
+            <th>Unit Tests</th>
+        </tr>
+        </thead>
+        
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+            {% for requirement in site.data.requirements %}
+            <tr>
+                <th scope="row">{{ requirement.module }}</th>
+                <td>
+                    {% for test in requirement.unit-tests %}
+                    {{ test }} <br>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>  
+
+</div>
+

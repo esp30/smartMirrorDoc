@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header card-header-danger">
+    {{card.title}}
+    </div>
+    <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">{{card.description}}</h6>
+        <a class="card-text">{{card.text}}</a>
+    </div>
+    <div class="card-footer">
+        <a href="{{ site.baseurl}}{{ card.button-ref}}" class="btn btn-round btn-small">{{card.button-description}}</a>
+    </div>
+</div>

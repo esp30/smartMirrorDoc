@@ -1,0 +1,24 @@
+- title: For everyone
+  description: "Including PEI responsibles"
+  text: >
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/assets/docs/VisionReport.pdf'>Vision Report</a> - the reference for the system development<br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/assets/docs/MVP.pdf'>MVP</a> - Minimum Viable Product<br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/team.html'>Team</a> - who we are and who's helping us<br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/logbook.html'>Logbook</a> - what the team is doing and planned doing in the next weeks<br><br>
+
+- title: For clients
+  description: "People trying to control their food portions and canteen workers"
+  text: >
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/features.html'>Features</a> - current, planned and future features<br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/vision.html'>Personas and Scenarios</a> - who will use our system and why <br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/architecture-client.html'>System Overview</a> - the pieces you need to use our system, without the techincal details<br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/manual.html'>Manual</a> - how to use our system<br><br>
+
+- title: For developers
+  description: "For geeks"
+  text: >
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/quickstart.html'>Quickstart</a> - How to implement our system (Deployment Manual)<br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/architecture.html'>Architecture</a> - Detailed architecture and technological choices for each component<br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/requirements.html'>Requirements</a> - what our system is supposed to do<br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/tests.html'>Quality Assurance + Risk Assessment</a> - how we assess our system works and future potential risks <br><br>
+    <a href='http://xcoa.av.it.pt/~pei2018-2019_g08/specification.html'>Releases</a> - requirements and goals for our releases and demos  <br><br>

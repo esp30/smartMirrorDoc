@@ -1,0 +1,18 @@
+- title: Mobile App
+  category: End-User
+  text: ""
+  steps: ["1.	Create an account using the app", "2.	Personalize your profile – diet, restrictions, goals, personal info such as weight, age, gender and associate your ID with the profile. The ID will be used to identify you in your canteen/refectory."
+  ]
+  canteen: false
+
+- title: At canteens
+  category: End-User
+  text: ""
+  steps: ["1. At the canteen, identify yourself by passing your ID close to the sensor.", "2. Grab your plate and place it in the food stand.", "3.	For each ingredient, put in the plate the recommended amount as shown in the screen above it.", "4.	After doing so, click on the screen/button to register you have put in the plate.", "5.	Enjoy your personalized meal 😊 "]
+  canteen: false
+
+- title: At canteens
+  category: Canteen Worker
+  text: ""
+  steps: ["1.	Log in the system.", "2.	Add the meal and choose its ingredients or add the ingredients if it’s not part of a recipe (e.g. vegetables).", "3.	If needed, during the lunch/dinner time, remove the ingredients no longer available."]
+  canteen: true

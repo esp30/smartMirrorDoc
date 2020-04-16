@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<!-- Header -->
+{% if page.header-image == true %}
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style=" background: rgb(25, 39, 160); height: 500px; background-image: url('{{ site.assets }}/{{ page.header-path }}')" >
+{% else %}
+<div class="page-header header-filter" data-parallax="true" style="height: 500px" >
+{% endif %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="brand text-center">
+          <h1 data-toc-skip>{{ page.title }}</h1>
+          <h3 class="title text-center" data-toc-skip> {{ page.description }} </h3>
+          {% if page.button == true %}
+          <a class="btn btn-danger btn-round" href="{{ site.baseurl}}{{ page.button-ref }}" >{{ page.button-description }}</a>    
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="main main-raised">
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        {% if page.toc == false %}
+          {{ content }}
+            
+          <br>
+          <br>
+          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="#" data-proofer-ignore><h5><i class="material-icons">arrow_upward</i> Return to Top</h5></a>
+        {% else %}
+        <div class="col">
+            <h5 data-toc-skip>Table of Contents</h5>
+            <nav id="toc" data-toggle="toc" class="sticky-top"></nav>
+          </div>
+          
+          <div id="content" class="col-lg-10">
+              {{ content }}
+              
+              <br>
+              <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="#" data-proofer-ignore><h5 data-toc-skip><i class="material-icons">arrow_upward</i> Return to Top</h5></a>
+          </div>
+        {% endif %}   
+      </div> 
+    </div>
+  </div>
+</div>

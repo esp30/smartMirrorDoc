@@ -1,0 +1,19 @@
+<div class="card">
+    
+    <!-- <a href="{{ site.baseurl }}/{{ post.button-link }}">
+        <img class="card-img-top" style="width: 100%;" src="{{ site.baseurl }}/{{ post.image }}" alt="{{ post.title }}">
+    </a> -->
+    
+    <div class="card-body">
+        <h5 class="card-title"><a href="{{ site.baseurl }}/{{ post.button-link }}">{{ post.title }}</a></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Categories: {% for category in post.categories %} {{ category }} {% endfor %}</h6>
+        <p class="card-text">{{ post.description }}</p>
+    </div>
+    <div class="card-footer text-muted">
+        {% if post.button-show == true %}
+        <a href="{{ site.baseurl }}/{{ post.button-link }}" class="btn btn-sm btn-round btn-warning" style="margin:5px;">{{post.button-description}}</a>
+        <p></p>
+        {% endif %}
+        <a href="{{ site.baseurl }}{{ post.url }}" class="card-link text-muted" style="margin:5px; ">Details</a>
+    </div>
+</div>

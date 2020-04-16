@@ -1,0 +1,63 @@
+---
+layout: page
+title: Personas and Scenarios
+description: "Who will use our system and why"
+button: false
+button_ref: None
+button_description: None
+comments: false
+header-image: true
+header-path: "images/getting-started.jpg"
+---
+
+<!-- Who would have this problem ? -->
+<div id="how">
+        <div class="title" style="text-align: center">
+            <h2>Persona</h2>
+            <h3 data-toc-skip>Who will use our system and why</h3>
+        </div>
+    
+        <div class="card-deck">
+            {% for persona in site.data.getting_started-persona %}
+            <div class="card" style="width: 20rem;">
+                <a>
+                    <img class="card-img-top" style="width: 100%;" src="{{ site.assets }}/images/persona/{{ persona.photo }}" alt="{{ persona.name }}">
+                </a>
+    
+                <div class="card-header card-header-info">
+                    <a style="font-weight: bold">{{persona.name}}</a>
+                    <p class="category">{{persona.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                        <li class="list-group-item" style="font-weight: bold">Motivations:</li>
+                    {% for characteristic in persona.characteristics %} 
+                        <li class="list-group-item">{{characteristic}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+
+<div id="how">
+    <div class="title" style="text-align: center">
+        <h2>Usage Scenarios</h2>
+        <h3 data-toc-skip>How the system will be used</h3>
+    </div>
+
+
+    <div class="list-group">
+            {% for scenario in site.data.scenarios %}
+            
+                <a  class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{scenario.title}}</h5>
+                    <small>{{scenario.category}}</small>
+                    </div>
+                    <p class="mb-1">{{scenario.description}}</p>
+                    <!-- <small>Donec id elit non mi porta.</small> -->
+                </a>
+            
+            {% endfor %} 
+        </div>
+</div>
+    

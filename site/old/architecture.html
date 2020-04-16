@@ -1,0 +1,64 @@
+---
+layout: page
+title: Architecture
+description: "The detailed components and technologies of the system"
+button: false
+button-ref: None
+button-description: None
+header-image: true
+header-path: "images/developers.jpg"
+---
+
+<div id="diagram">
+    <div class="title">
+    <h2>System Overview</h2>
+    </div>
+
+    <img class="center" src="{{site.assets}}/images/architecture.png" alt="Project Architecture Diagram" style="max-width:100%;
+    max-height:100%;"></img>
+    <p class="text-muted" style="text-align: center">
+        IoT for Nutrition Detailed Architecture Diagram
+    </p>
+</div>
+
+<div id="details">
+    <div class="title">
+        <h2>Deployment</h2>
+        <h4>The described techonlogies are the <b>currently deployed</b> technologies.</h4>
+    </div>
+            
+    <!-- <div class="card-deck">
+    {% for card in site.data.architecture-deployment %}
+        {% include infobox.html %}
+    {% endfor %}
+    </div> -->
+
+    <!--Table-->
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Component</th>
+            <th>Techonologies/Devices</th>
+            <th>Purpose</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            {% for deployment in site.data.architecture-deployment %}
+            <tr>
+                <th scope="row">{{ deployment.category }}</th>
+                <td>{{ deployment.title }} </td>
+                <td>{{ deployment.tech }} </td>
+                <td>{{ deployment.purpose}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    
+</div>
+    
+        
+        

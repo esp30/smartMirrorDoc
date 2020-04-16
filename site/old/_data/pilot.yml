@@ -1,0 +1,17 @@
+- category: goals
+  title: Our Goals
+  description: ""
+  text: ""
+  features: ["Experience first hand working and meeting with real potential clients", "Adapt our concept and current solution to the actual needs of the clients", "Analyze and fix potential usability issues associated with putting sensors on the canteen's food stands", "Provide SASUA more information to better manage their food stocks and personalize the meals for people concerned about their health (such as athletes)", "Fine-tune nutritional aspects of our project with the collaboration of SASUA's nutritional team"]
+
+- category: what-we-propose
+  title: What we propose
+  description: ""
+  text: ""
+  features: ["Develop and install a special food stand in Crasto’s Canteen for people concerned with their food portions", "Provide to the SASUA team a dashboard like interface with statistics related to meals"]
+
+- category: concerns
+  title: Our Concerns
+  description: ""
+  text: ""
+  features: ["How to ensure the system responds quickly enough to be usable without usability issues by dozens of people every few minutes?", "How to place the sensors in the canteen food stands in a way that are protected from the heat and the weight of the food containers but without being a nuisance for the canteen workers?", "Our food stand prototype for PEI was built on a plywood board. Materials as such won’t stand food/liquids for long. The building material must be stainless steel or similar in order to prevent rust and corrosion from compromising the system after some usage.", "The electrical circuits must also be sealed or, at the very least, protected in an area that prevents its contact with liquids."]

@@ -1,0 +1,39 @@
+- name: Jorge Catarino
+  role: Quality Assurance Manager, Back-End Developer
+  description: 85028 
+  photo: team-jorge.jpg
+  mentor: false
+  
+- name: Luís Moura
+  role: Database Manager, Front-End Developer
+  description: 83808 
+  photo: team-luis.jpg
+  mentor: false
+
+- name: Maria João Lavoura
+  role: Front-End Developer
+  description: 84681
+  photo: team-maria.jpg
+  mentor: false
+
+- name: Paulo Vasconcelos
+  role: Infrastructure Manager, Back-End Developer
+  description: 84987
+  photo: team-paulo.jpg
+  mentor: false
+  
+- name: Pedro Teixeira
+  role: Back-End Developer, Documentation Manager
+  description: 84715
+  photo: team-pedro.jpg
+  mentor: false
+
+- name: Prof. José Alberto Fonseca
+  description: IT/DETI - UA
+  photo: team-jaf.jpg
+  mentor: true
+
+- name: Prof. João Paulo Barraca
+  description: IT/DETI - UA
+  photo: team-jpbarraca.jpg
+  mentor: true

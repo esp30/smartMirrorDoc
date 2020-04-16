@@ -1,0 +1,51 @@
+---
+layout: page
+title: Releases
+description: "Requirements and goals for our releases and demos"
+button: false
+button_ref: None
+button_description: None
+comments: false
+toc: false
+header-image: true
+header-path: "images/developers.jpg"
+---
+
+<div id="releases">
+    <div class="title" style="text-align: center">
+        <h2>Specifications for each demo</h2>
+    </div>
+        
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Release</th>
+            <th>Demo</th>
+            <th>Objectives</th>
+            <th>Results</th>
+        </tr>
+        </thead>
+        
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+            {% for release in site.data.releases %}
+            <tr>
+                <th scope="row">{{release.number}}</th>
+                <td>{{release.demo}}</td>
+                <td>
+                    {% for objective in release.objectives %}
+                    {{objective}}<br>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for result in release.results %}
+                    {{result}}<br><br>
+                    {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

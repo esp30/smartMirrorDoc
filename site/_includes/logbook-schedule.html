@@ -1,0 +1,50 @@
+<!--Table-->
+<table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Week</th>
+            <th>Class Day</th>
+            <th>Milestone</th>
+            <th>Expected Results/Features</th>
+            <th>Obtained Results/Features</th>
+            <th>Meetings</th>
+        </tr>
+        </thead>
+        
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+            {% for week in site.data.schedule %}
+            <tr>
+                <th scope="row">{{ week.number }}</th>
+                <td>{{ week.date}} </td>
+                <td>{{ week.milestone }} </td>
+                <td>{{ week.objectives}} </td>
+                
+                <!-- Only completed weeks can have results -->
+                {% if week.hide-link == true %}
+                <td>{{ week.results}} </td>
+                <td>No Meetings</td>
+                
+                {% elsif week.done == true %}
+                <td>{{ week.results}} </td>
+                <td><a href="{{site.baseurl}}/info/weekly-progress/2019/03/07/logbook-week{{week.number}}.html">See</a></td>
+                
+              
+                
+                {% else  %}
+                
+                <td>TBA</td>
+                <td>TBA</td>
+                
+                {% endif %}
+
+                
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    

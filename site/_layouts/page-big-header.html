@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<!-- Header -->
+{% if page.header-image == true %}
+<div class="page-header header-filter clear-filter purple-filter  background: rgb(25, 39, 160);" data-parallax="true" style=" background: rgb(25, 39, 160); background-image: url('{{ site.assets }}/{{ page.header-path }}')" >
+{% else %}
+<div class="page-header header-filter" data-parallax="true" >
+{% endif %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="brand text-center">
+          <h1>{{ page.title }}</h1>
+          <h3 class="title text-center"> {{ page.description }} </h3>
+              
+          {% if page.button == true %}
+          <a class="btn btn-danger btn-round" href="{{ site.baseurl }}{{ page.button-ref }}" >{{ page.button-description }}</a>    
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="main main-raised">
+  <div class="container">
+    <div class="section">
+      {{ content }}
+    </div>
+  </div>
+</div>

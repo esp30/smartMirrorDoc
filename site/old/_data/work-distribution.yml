@@ -1,0 +1,53 @@
+- module: Documentation Manager
+  responsibles: ['Pedro']
+
+- module: QA Manager
+  responsibles: ['Jorge']
+  deputies: ['Whole team']
+  notes: ""
+
+- module: Infrastructure Manager
+  responsibles: ['Paulo']
+  deputies: ['Pedro']
+  notes: ""
+
+- module: Food Stand Sensors 
+  responsibles: ['Paulo']
+  deputies: ['Jorge', 'Pedro' ]
+  notes: ""
+
+- module: Food Stand Display's GUI
+  responsibles: ['Maria']
+  deputies: ['Luis']
+  notes: ""
+
+- module: Canteen Control Unit
+  responsibles: ['Paulo']
+  deputies: ['Pedro']
+  notes: ""
+
+- module: Processing Module at the Canteen Control Unit
+  responsibles: ['Luis']
+  deputies: ['Jorge']
+  notes: ""
+
+- module: Canteen Control Interface
+  responsibles: ['Maria']
+  deputies: ['Luis']
+  notes: ""
+
+- module: Mobile App
+  responsibles: ['Maria']
+  deputies: ['Luis']
+  notes: ""
+
+- module: Server
+  responsibles: ['Pedro', 'Jorge']
+  deputies: ['']
+  notes: ""
+
+- module: Database
+  responsibles: ['Luis', 'Pedro', 'Jorge']
+  deputies: []
+  notes: ""
+

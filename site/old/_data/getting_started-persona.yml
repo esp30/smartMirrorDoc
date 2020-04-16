@@ -1,0 +1,16 @@
+- name: John
+  description: Accountant trying to lose weight 
+  photo: persona-1.jpg
+  characteristics: ["Lose weight and is willing to go through a food regimen that achieves that goal and if the system can help him control food portions."]
+  
+- name: Sarah
+  description: Professional athlete
+  photo: persona-2.jpg
+  characteristics: ["Control what goes into her plate when she needs to eat at the canteen. "]
+
+- name: Mary
+  description: Canteen Manager
+  photo: persona-3.jpg
+  characteristics: ["Help control food portions in order to avoid waste of some ingredients and shortage of others."]
+  
+

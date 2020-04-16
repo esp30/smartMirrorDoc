@@ -1,0 +1,40 @@
+- title: Manage the meals of the day  
+  category: Canteen Workers
+  description: "Add predefined list of ingredients, change and remove through a dashboard like UI."
+  status: current  
+
+- title: Identify the user by waving a card and receive basic info (such as name) associated with the user 
+  category: User at the canteen
+  description: "At the entry of the canteen and on each food stand"
+  status: current
+ 
+- title: Weigh the food plate
+  category: User at the canteen
+  status: current
+
+- title: Identify the ingredient being put on the plate (automatically, using a ultrasonic sensor)
+  category: User at the canteen
+  description: On Demo 2
+  status: current
+
+- title: Show the advised quantities of each ingredient on a display for each food stand for a given user
+  category: User at the canteen
+  description: On Demo 2
+  status: current
+
+- title: Develop the end-user’s mobile app and allow the creation of user accounts 
+  category: User
+  status: future-planned
+
+- title: Implement usage statistics both to the end-user and to the canteen 
+  category: User/Canteen Workers
+  status: maybe
+
+- title: Security improvements regarding the Server API, MQTT communications and passwords 
+  category: Technical Details
+  description: "Authentication to use the Server API, MQTT communications secure using IPsec or SSH"
+  status: maybe
+
+- title: QoS on MQTT communications 
+  category: Technical Details
+  status: maybe

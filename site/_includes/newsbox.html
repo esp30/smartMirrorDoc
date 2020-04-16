@@ -1,0 +1,8 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Categories: {% for category in post.categories %} {{ category }} {% endfor %}</h6>
+        <p class="card-text">{{ post.description }}</p>
+        <a class="btn btn-round btn-small" href="{{ site.baseurl }}{{ post.url }}">Read</a>
+    </div>
+</div>

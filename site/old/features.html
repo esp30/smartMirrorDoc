@@ -1,0 +1,91 @@
+---
+layout: page
+title: Features
+description: "Current, Planned and Future Features"
+button: false
+button-description: ""
+button-ref: "/assets/docs/"
+toc: true
+header-image: true
+header-path: "images/getting-started.jpg"
+---
+
+<div id="currents">
+    <div class="title" style="text-align: center">
+        <h2>Current Features</h2>
+        <h3 data-toc-skip>Demonstrated in Demo 4 (Students@DETI)</h3>
+        <div class="list-group">
+                {% for feature in site.data.features %}
+                {% if feature.status == "future-planned" %}
+                    <a  class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{feature.title}}</h5>
+                        <small>{{feature.category}}</small>
+                      </div>
+                      <p class="mb-1">{{feature.description}}</p>
+                      <!-- <small>Donec id elit non mi porta.</small> -->
+                    </a>
+                {% endif %}
+                {% endfor %} 
+        </div>
+        <h3 data-toc-skip>Demonstrated in Demo 1 and 2</h3>
+        <div class="list-group">  
+            {% for feature in site.data.features %}
+            {% if feature.status == "current" %}
+                <a  class="list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{feature.title}}</h5>
+                    <small>{{feature.category}}</small>
+                  </div>
+                  <p class="mb-1">{{feature.description}}</p>
+                  <!-- <small>Donec id elit non mi porta.</small> -->
+                </a>
+            {% endif %}
+            {% endfor %} 
+        </div>
+    </div>
+</div> 
+
+
+
+<!-- <div id="planned">
+    <div class="title" style="text-align: center">
+        <h2>Future Planned Features</h2>
+        <h3 data-toc-skip>To be demonstrated in the next demos</h3>
+        <div class="list-group">
+                {% for feature in site.data.features %}
+                {% if feature.status == "future-planned" %}
+                    <a  class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{feature.title}}</h5>
+                        <small>{{feature.category}}</small>
+                      </div>
+                      <p class="mb-1">{{feature.description}}</p>
+                      <small>Donec id elit non mi porta.</small> -->
+                    <!-- </a>
+                {% endif %}
+                {% endfor %} 
+            </div>
+    </div>
+    
+</div>  --> 
+
+<!-- <div id="under-consideration">
+    <div class="title" style="text-align: center">
+        <h2>Future Features Under Consideration</h2>
+    </div>
+    <div class="list-group">
+            {% for feature in site.data.features %}
+            {% if feature.status == "maybe" %}
+                <a  class="list-group-item list-group-item-action flex-column align-items-start">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{feature.title}}</h5>
+                    <small>{{feature.category}}</small>
+                  </div>
+                  <p class="mb-1">{{feature.description}}</p>
+                </a>
+            {% endif %}
+            {% endfor %} 
+        </div>
+    
+</div>  -->

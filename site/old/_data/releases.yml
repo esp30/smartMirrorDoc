@@ -1,0 +1,19 @@
+- number: 1
+  demo: 1
+  objectives: ['Prove communication between server, app (webpage) and Canteen Control Unit', 'Prove communication between weight sensors and Stand Control Unit', 'Prove communication between ID reader and Canteen Control Unit', 'Prove communication between Database and Server']
+  results: ['Server and Database Deployed and Tested<br>(Small Dashboard implemented to prove)', 'User Identification Modules working<br> (card is read and retrieval from the database of the user name associated with the card is working', 'Food benches sensors working and integrated (<a href="https://www.youtube.com/watch?v=QaDkJOuhWLo">see a demonstration video</a>)']
+
+- number: 2
+  demo: 2
+  objectives: ['Create UI on Food Stands', 'Identify the ingredient being taken', 'Implement Database and Server']
+  results: ['Demo 2 Presented', 'Ingredient being taken is identified using Final Database and Server API Implemented', 'Food Stand Interface to show Portions Recommendations implemented', 'Started Canteen Control Interface']
+
+- number: 3
+  demo: 3
+  objectives: ['Create Dashboard Interface (Canteen Control Interface) for the Canteen Workers']
+  results: ['Showcased the whole system flow with an initial version of the Canteen Control Interface']
+
+- number: 4
+  demo: 4
+  objectives: ['Present a Fully Integrated System']
+  results: ['Finished the system with the final version of the Canteen Control Interface']

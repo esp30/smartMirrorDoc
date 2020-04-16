@@ -1,0 +1,111 @@
+---
+layout: page-big-header-index
+title: IoT for Nutrition
+description: Your Balanced Meal, Made Easy<br><h4 class="title">Helping users control their food portions at canteens with IoT</h4><br>
+
+header-image: true
+header-path: "images/home.jpg"
+
+button: true
+button-ref: "#intro"
+button-description: Learn more
+---
+
+<!-- What are we trying to solve -->
+<div id="what" style="text-align: center" >
+    <div class="title" style="text-align: center">
+    <h2 id="intro"> </h2>
+    <h2>IoT for Nutrition? What's that all about?</h2>
+    </div>
+
+    <h3 style="text-align: left">We are consuming ever <b>bigger portions of food</b> on ever larger plates!</h3>
+    <h3 style="text-align: left">Why should we care about the size of our portions? We'll eat more than we should, with all the <b>potential consequences for our health</b>!</h3>
+    <h3 style="text-align: left"><b>In canteens the problem is worse</b> since we don't know the contents/ingredients of each recipe!</h3>
+    <h3 style="text-align: left">IoT for Nutrition plans on <b>using the concept of IoT</b>, of connecting devices installed in a canteen to the Internet, <b>to help users and canteen workers to easier manage and control food portions</b> in each plate, creating a balanced meal, in an easy way.</h3>
+
+    <a class="btn btn-round btn-lg btn-warning" href="{{site.baseurl}}/client.html"><i class="material-icons">explore</i> Learn More</a>
+    <a class="btn btn-round btn-lg btn-danger" href="https://www.youtube.com/watch?v=-d4_4PYNAwY&list=PLjof47ZuidU_wSRm0dhgoR6hi6VYozy4k"><i class="material-icons">visibility</i> See our system in action</a>
+    
+</div>
+
+<br>
+
+<div class="section" id="carousel">
+    <div id="what" style="text-align: center" >
+        <div class="title" style="text-align: center">
+        <h2 id="intro"> </h2>
+        <h2>What we propose</h2>
+        <h3>Mockup for our vision for the future including collaboration with SASUA</h3>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col mr-auto ml-auto">
+          <!-- Carousel Card -->
+          <div class="card card-raised card-carousel">
+            <div class="carousel slide" id="carouselExampleIndicators" data-interval="3000" data-ride="carousel">
+              <ol class="carousel-indicators">
+                {% for render in site.data.renders %}
+                {% if render.number == 1 %}
+                    <li class="active" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+                {% else %}
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{render.number | minus: 1}}"></li>
+                {% endif %}
+                {% endfor %}
+              </ol>
+              <div class="carousel-inner">
+                {% for render in site.data.renders %}
+                {% if render.number == 1 %}
+                <div class="carousel-item active">
+                {% else %}
+                <div class="carousel-item">
+                {% endif %}
+                    <img class="d-block w-100" alt="Slide {{render.number}}" src="{{site.assets}}/images/renders/render0{{render.number}}.png">
+                    <div class="carousel-caption d-none d-md-block">
+                    <h4 style="color:black; background: white; opacity: 0.5">
+                        <!-- <i class="material-icons">more</i> --> {{render.description}} 
+                    </h4>
+                    </div>
+                </div>
+                {% endfor %}
+              </div>
+              <a class="carousel-control-prev" role="button" href="#carouselExampleIndicators" data-slide="prev">
+                <i class="material-icons">keyboard_arrow_left</i>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" role="button" href="#carouselExampleIndicators" data-slide="next">
+                <i class="material-icons">keyboard_arrow_right</i>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+          <!-- End Carousel Card -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="section-title">
+        <h2><span>News</span></h2>
+    </div>
+
+    <div class="row">
+
+        <div class="card-deck">
+
+        {% for post in site.posts %}
+
+            {% if post.featured == true %}
+
+                {% include newsbox-image.html %}
+
+            {% endif %}
+
+        {% endfor %}
+        
+        </div>
+
+    </div>
+    
+
+

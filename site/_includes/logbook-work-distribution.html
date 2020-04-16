@@ -1,0 +1,53 @@
+
+<!--Table-->
+<table id="tablePreview" class="table" style="table-layout:fixed">
+    <!--Table head-->
+    <thead>
+    <tr>
+        <th>Module/Feature</th>
+        <th>Responsible</th>
+        <th>Deputy Responsibles</th>
+        <!-- <th>Notes</th> -->
+    </tr>
+    </thead>
+    
+    <!--Table head-->
+    <!--Table body-->
+    <tbody>
+            {% for module in site.data.work-distribution %}
+            <tr>
+                <th scope="row">{{module.module}}</th>
+                <td>
+                    {% for responsible in module.responsibles %}
+
+                    {% if responsible != "Whole team" %}
+                    <a data-toggle="tooltip" title="<img src='{{ site.assets }}/images/team/team-{{ responsible | downcase }}.jpg' height='150' width='150' alt='{{responsible}}'>">
+                    {{responsible}}
+                    </a>             
+                    {% else %}
+                    {{responsible}}   
+                    {% endif %}           
+                    <br>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for deputy in module.deputies %}
+    
+                    {% if deputy != "Whole team" %}
+                    <a data-toggle="tooltip" title="<img src='{{ site.assets }}/images/team/team-{{ deputy | downcase }}.jpg' height='150' width='150' alt='{{responsible}}'>">
+                    {{deputy}}
+                    </a>      
+                    {% else %}
+                    {{deputy}}   
+                    {% endif %}
+                    <br>
+                    {% endfor %}
+                </td>
+                <!-- <td>
+                    {{module.notes}}
+                </td> -->
+            </tr>
+            {% endfor %}
+    </tbody>
+</table>
+

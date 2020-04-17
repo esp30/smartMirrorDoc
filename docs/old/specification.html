@@ -8,36 +8,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no">
 
     <!-- Page Info -->
-    <title>{{ page.title }} | {{ site.title }} </title>
+    <title>Releases | Smart Mirror </title>
 
     <!-- Social tags -->
     <meta name="keywords" content="">
-    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="Make your life easier">
     
     <!-- Fonts and icons -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- CSS Files -->
-    <link href="{{ site.assets }}/css/material-kit.css?v=2.0.5" rel="stylesheet">
+    <link href="assets/css/material-kit.css?v=2.0.5" rel="stylesheet">
           
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="{{ site.assets }}/images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="{{ site.assets }}/images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ site.assets }}/images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{ site.assets }}/images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ site.assets }}/images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="{{ site.assets }}/images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="{{ site.assets }}/images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="{{ site.assets }}/images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.assets }}/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="{{ site.assets }}/images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.assets }}/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="{{ site.assets }}/images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.assets }}/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ site.assets }}/images/favicon/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="{{ site.assets }}/images/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     
@@ -49,9 +49,9 @@
       <div class="container">
         <div class="navbar-translate">
           <!-- Begin Logo -->
-          <a class="navbar-brand" href="{{ site.baseurl }}/">
-            <!-- <img src="{{site.assets}}/images/logo/logo.png" alt="{{ site.name }}">  -->
-            <i class="material-icons">video_label</i> {{ site.title }} 
+          <a class="navbar-brand" href="/">
+            <!-- <img src="assets/images/logo/logo.png" alt="">  -->
+            <i class="material-icons">video_label</i> Smart Mirror 
           </a>
           <!-- End Logo -->
           
@@ -67,58 +67,50 @@
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <!-- Getting Started -->
-            {% if page.url == "/scenarios.html" %}
-            <li class="active nav-item dropdown">
-            {% else %}
+            
             <li class="nav-item dropdown">
-            {% endif %}
+            
               <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                 <i class="material-icons">explore</i> Getting Started
               </a>
               <div class="ripple-container"></div></a>
               <div class="dropdown-menu dropdown-with-icons">
-<!--                 <a href="{{ site.baseurl }}/client.html" class="dropdown-item">
+<!--                 <a href="/client.html" class="dropdown-item">
                   <i class="material-icons">explore</i> Getting Started
                 </a>
-                <a href="{{ site.baseurl }}/features.html" class="dropdown-item">
+                <a href="/features.html" class="dropdown-item">
                   <i class="material-icons">toc</i> Features
                 </a> -->
-                <a href="{{ site.baseurl }}/scenarios.html" class="dropdown-item">
+                <a href="/scenarios.html" class="dropdown-item">
                   <i class="material-icons">person</i> Personas + Scenarios
                 </a>
               </div>
             </li>
             
             <!-- Development -->            
-            {% if page.url == "/developers.html" %}
-            <li class="active nav-item">
-            {% else %}
+            
             <li class="nav-item">
-            {% endif %}
-              <a href="{{ site.baseurl }}/developers.html" class="nav-link">
+            
+              <a href="/developers.html" class="nav-link">
                 <i class="material-icons">book</i> Current Status
               </a>
             </li> 
 
                     
             <!-- Team -->
-            {% if page.url == "/team.html" %}
-            <li class="active nav-item">
-            {% else %}
+            
             <li class="nav-item">
-            {% endif %}
-              <a href="{{ site.baseurl }}/team.html" class="nav-link">
+            
+              <a href="/team.html" class="nav-link">
                 <i class="material-icons">supervisor_account</i> Team
               </a>
             </li>
 
             <!-- Logbook -->
-            <!-- {% if page.url == "/logbook.html" %}
-            <li class="active nav-item">
-            {% else %}
+            <!-- 
             <li class="nav-item">
-            {% endif %}
-              <a href="{{ site.baseurl }}/logbook.html" class="nav-link">
+            
+              <a href="/logbook.html" class="nav-link">
                 <i class="material-icons">schedule</i> Logbook
               </a>
             </li> -->
@@ -130,7 +122,63 @@
     </nav>
 
   <!-- Content -->
-  {{ content }} 
+  <!-- Header -->
+
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style=" background: rgb(25, 39, 160); height: 500px; background-image: url('assets/images/developers.jpg')" >
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="brand text-center">
+          <h1 data-toc-skip>Releases</h1>
+          <h3 class="title text-center" data-toc-skip> Requirements and goals for our releases and demos </h3>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="main main-raised">
+  <div class="container">
+    <div class="section">
+      <div class="row">
+        
+          <div id="releases">
+    <div class="title" style="text-align: center">
+        <h2>Specifications for each demo</h2>
+    </div>
+        
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Release</th>
+            <th>Demo</th>
+            <th>Objectives</th>
+            <th>Results</th>
+        </tr>
+        </thead>
+        
+        <!--Table head-->
+        <!--Table body-->
+        <tbody>
+            
+        </tbody>
+    </table>
+</div>
+
+            
+          <br>
+          <br>
+          <a class="sidebar-nav-item" href="#" data-proofer-ignore><h5><i class="material-icons">arrow_upward</i> Return to Top</h5></a>
+           
+      </div> 
+    </div>
+  </div>
+</div>
+ 
   
   <!-- Footer -->
   <footer class="footer footer-default">
@@ -138,7 +186,7 @@
       <nav class="float-left">
         <ul>
           <li>
-            <a> {{ site.title }} - {{ site.description }}</a>
+            <a> Smart Mirror - Make your life easier</a>
           </li>
         </ul>
       </nav>

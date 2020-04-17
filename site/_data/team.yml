@@ -1,0 +1,30 @@
+- name: Jorge Catarino
+  role: 
+  description: 85028 
+  photo: team-jorge.jpg
+  mentor: false
+  
+- name: Fábio Alves
+  role: 
+  description: 84794 
+  photo: team-fabio.jpg
+  mentor: false
+
+- name: Marcelo Fraga
+  role: 
+  description: 84839
+  photo: team-marcelo.jpg
+  mentor: false
+
+- name: Paulo Vasconcelos
+  role: 
+  description: 84987
+  photo: team-paulo.jpg
+  mentor: false
+  
+- name: Pedro Teixeira
+  role: 
+  description: 84715
+  photo: team-pedro.jpg
+  mentor: false
+

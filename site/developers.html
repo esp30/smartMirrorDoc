@@ -1,15 +1,16 @@
 ---
 layout: page
-title: Architecture
-description: "The detailed components and technologies of the system"
+title: Current Status
+description: "Current status of our project"
 button: false
 button-ref: None
 button-description: None
 header-image: true
 header-path: "images/developers.jpg"
+toc: false
 ---
 
-<div id="diagram">
+<!-- <div id="diagram">
     <div class="title">
     <h2>System Overview</h2>
     </div>
@@ -20,11 +21,11 @@ header-path: "images/developers.jpg"
         IoT for Nutrition Detailed Architecture Diagram
     </p>
 </div>
-
+ -->
 <div id="details">
     <div class="title">
-        <h2>Deployment</h2>
-        <h4>The described techonlogies are the <b>currently deployed</b> technologies.</h4>
+        <h2>Current Status</h2>
+     <!--    <h4>The described techonlogies are the <b>currently deployed</b> technologies.</h4> -->
     </div>
             
     <!-- <div class="card-deck">
@@ -40,18 +41,16 @@ header-path: "images/developers.jpg"
         <tr>
             <th>Category</th>
             <th>Component</th>
-            <th>Techonologies/Devices</th>
-            <th>Purpose</th>
+            <th>Status</th>
         </tr>
         </thead>
         
         <tbody>
-            {% for deployment in site.data.architecture-deployment %}
+            {% for deployment in site.data.for_developers %}
             <tr>
                 <th scope="row">{{ deployment.category }}</th>
                 <td>{{ deployment.title }} </td>
                 <td>{{ deployment.tech }} </td>
-                <td>{{ deployment.purpose}} </td>
             </tr>
             {% endfor %}
         </tbody>

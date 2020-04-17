@@ -1,0 +1,16 @@
+- name: Harold
+  description: Retired elder 
+  photo: harold.jpg
+  characteristics: ["Harold is a 75 years old now-retired Hungarian electrical engineer. Harold is also the carrier of a disease, similar to bipolar disorder, which causes him to change his temper in an abrupt, incontrollable way.", "His family is very supportive of his condition. However, as any severe medical condition, Harold requires medical follow-up. In an ideal situation, his doctor would be warned every time his temper changed in order to track and analyze his behavior patterns. Since this isn’t possible, Harold got himself a SmartMirror.", "Harold’s account is setup so that every time he stands near, looking at his SmartMirror, the mirror takes a photograph, analyzes the image and determines Harold’s current mood. This information is then sent to his doctor. It also sends a notification every time the system detects a change in his mood."]
+  
+- name: John
+  description: Doctor
+  photo: doctor.jpg
+  characteristics: ["John is Harold’s doctor. He cares a lot for him and tries to keep up with his current state (mood) at all time.", "In order to be able to remotely know how’s his patient doing, he downloaded an app that notifies him whenever there’s a mood change with Harold. It also allows him to look at statistics regarding the latest readings."]
+
+- name: Joanne and Madison
+  description: 
+  photo: twins.jpg
+  characteristics: ["Joanne and Madison are two 20 years old twin sisters.", "These twin sisters are not a copy of each other. Joanne is enrolled in an Engineering in an University in the north while her sister Madison is perfecting her dancing skills in an dance academy, down south.", "Although their different interests, they really like and care for each other and make video calls whenever they can. However, Madison is often busy practicing and having her laptop opened on the floor while she’s trying out new moves is, in the very least, risky. Since Madison needs a mirror to practice, Joanne got her a SmartMirror. This way, they can talk while she practices and Joanne can see her new moves firsthand."]
+  
+

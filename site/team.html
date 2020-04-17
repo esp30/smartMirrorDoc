@@ -1,0 +1,38 @@
+---
+layout: page
+title: Team
+description: ""
+
+header-image: true
+header-path: "images/team/"
+
+button: true
+button-ref: https://docs.google.com/spreadsheets/d/1-anmC7JUMqvxo18BQaN6GM0xpGJOnRGWG8OXHS1Q1Bg/edit?usp=sharing 
+button-description: Timesheet
+
+toc: false
+---
+
+<div id="team">
+    <div class="title"  style="text-align: center;">
+        <h2>Team</h2>
+    </div>
+    <br>
+    <div class="row" style=" text-align: center;">
+        {% for member in site.data.team %}
+            {% if member.mentor == false %}
+            <div class="col-sm-2 ml-auto">
+                <img data-toggle="tooltip" data-placement="top" title="{{ member.role }}" class="rounded-circle img-fluid" alt="Circle Image" src="{{ site.assets }}/images/team/{{ member.photo }}">
+                <h4 style="font-weight: bold;">{{ member.name }}</h4>
+                <h5>{{ member.description }}</h5>
+            </div>
+            {% endif %}
+    
+        {% endfor %}
+    </div>
+</div>
+    
+    
+</div>
+
+

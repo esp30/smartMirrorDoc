@@ -7,7 +7,7 @@
   tech: Rest API drafted (available <a href="https://github.com/esp30/smartMirror/blob/master/NOTES.md">here</a>)
 
 - title: Messaging
-  tech: 
+  tech: Defined messaging basic workflow 
 
 - title: Application
   tech: Application capable of obtaining emotion from a person captured by a webcam

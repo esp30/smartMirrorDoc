@@ -47,28 +47,35 @@ toc: false
 
 
     <div class="list-group">
-        <h4 style="text-align: center;">Approved scenarios</h4>
-        {% for feature in site.data.features %}
-            {% if feature.STATUS == "ToDo" %}
-            <a class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1"></h5>
+            <!--Table-->
+            <table id="tablePreview" class="table" style="table-layout:fixed">
+                <!--Table head-->
+                <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Scenario</th>
+                    <th>Scenario Description</th>
+                    <th>Scenario Status</th>
+                </tr>
+                </thead>
                 
-                <small></small>
-                </div>
-
-                Scenarios:
-                
-               
-                <p class="mb-1">
-               
-                </p>
+                <tbody>
+                    {% for feature in site.data.scenarios %}
+                    {% if feature.FEATURE-STATUS == ToDo %}
+                    <tr>
+                        <th scope="row">{{ feature.FEATURE_TITLE }}<br>{{ feature.FEATURE_DESCRIPTION }}</th>
+                        <td>{{ feature.SCENARIO }} </td>
+                        <td>{{ feature.SCENARIO_DESCRIPTION }}</td>
+                        <td>{{ feature.SCENARIO_STATUS }}</td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
             
-                <!-- <small>Donec id elit non mi porta.</small> -->
-            </a>
-            {% endif %}
-        {% endfor %} 
-
+            
+        </div>
+            
        
 </div>
     

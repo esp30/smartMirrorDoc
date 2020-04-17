@@ -1,78 +1,92 @@
 
-- FEATURE: Report Status
-  DESCRIPTION: In order to get better medical care\nUsers should be able to easily report their current status
-  STATUS: ToDo
+- FEATURE_TITLE: Report Status
+  FEATURE_DESCRIPTION: In order to get better medical care <br> Users should be able to easily report their current status
+  SCENARIO: Choose to Report
+  SCENARIO_DESCRIPTION: | 
+    GIVEN a user with a medical condition <br>
+    WHEN the user steps in front of the mirror <br>
+    AND says "Status report" <br>
+    THEN the smart mirror should assess his status (mood) <br>
+  SCENARIO_STATUS: To be done
 
-- SCENARIO: Choose to Report
-  DESCRIPTION: >
-    GIVEN a user with a medical condition\n
-    WHEN the user steps in front of the mirror\n
-    AND says "Status report"\n
-    THEN the smart mirror should assess his status (mood)\n
-  FEATURE_NAME: Report Status
-  
 - SCENARIO: Report on Wake (RoW)
-  DESCRIPTION: >
-    GIVEN a user with a medical condition\n
-    AND said user just woke up\n
-    WHEN the user steps in front of the mirror\n
-    AND stands there for a few seconds\n
-    THEN the smart mirror should assess his status (mood)\n
-  FEATURE_NAME: Report Status
+  SCENARIO_DESCRIPTION: |
+    GIVEN a user with a medical condition <br>
+    AND said user just woke up <br>
+    WHEN the user steps in front of the mirror <br>
+    AND stands there for a few seconds <br>
+    THEN the smart mirror should assess his status (mood) <br>
+  SCENARIO_STATUS: To be done
 
-- FEATURE: Remotely Check Patient Status\nIn order to provide better medical care\nUsers should be able to easily check their patient's (latest) reported status
+#######################################################################
+- FEATURE_TITLE: Remotely Check Patient Status
+  FEATURE_DESCRIPTION: In order to provide better medical care <br> Users should be able to easily check their patient's (latest) reported status
   SCENARIO: Notification
-    GIVEN a user with a medical condition
-    AND a medical professional that cares for said user
-    AND a mobile app that accesses the system's public API
-    AND internet connection
-    WHEN the system records a status (mood) change with the user
-    THEN the medical professional should be notified via the mobile app
-  SCENARIO: Latest Reports
-    GIVEN a user with a medical condition
-    AND a medical professional that cares for said user
-    AND a mobile app that accesses the system's public API
-    AND internet connection
-    WHEN the medical professional wishes to check on their patient latest reports
-    THEN the medical professional should be able to access that information using the mobile app
-  status: ToDo
+  SCENARIO_DESCRIPTION: |
+    GIVEN a user with a medical condition <br><br>
+    AND a medical professional that cares for said user <br><br>
+    AND a mobile app that accesses the system's public API <br><br>
+    AND internet connection <br><br> 
+    WHEN the system records a status (mood) change with the user <br><br>
+    THEN the medical professional should be notified via the mobile app <br><br>
+  SCENARIO_STATUS: To be done
 
-- FEATURE: Display Informations
-  DESCRIPTION: >
-    In order to complement the day to day tasks
-    Users should be able to get useful informations (like the weather)
+- SCENARIO: Latest Reports
+  SCENARIO_DESCRIPTION: | 
+    GIVEN a user with a medical condition <br><br>
+    AND a medical professional that cares for said user <br><br>
+    AND a mobile app that accesses the system's public API <br><br>
+    AND internet connection <br><br>
+    WHEN the medical professional wishes to check on their patient latest reports <br><br>
+    THEN the medical professional should be able to access that information using the mobile app <br><br>
+  SCENARIO_STATUS: To be done
 
+#######################################################################
+- FEATURE_TITLE: Display Informations
+  FEATURE_DESCRIPTION: In order to complement the day to day tasks <br> Users should be able to get useful informations (like the weather)
   SCENARIO: Checking the Weather
-    GIVEN a user
-    AND internet connection
-    WHEN the user says "Display weather"
-    THEN the smart mirror should display the weather for the day
-  SCENARIO: Checking To Do List
-    GIVEN a user
-    AND internet connection
-    WHEN the user says "Display To Do list"
-    THEN the smart mirror should display the user's "To do list"
-  status: ToDo
+  SCENARIO_DESCRIPTION: | 
+    GIVEN a user <br><br>
+    AND internet connection <br><br>
+    WHEN the user says "Display weather" <br><br>
+    THEN the smart mirror should display the weather for the day <br><br>
+  SCENARIO_STATUS: To be done
+  
+- SCENARIO: Checking To Do List
+  SCENARIO_DESCRIPTION: | 
+    GIVEN a user <br><br>
+    AND internet connection <br><br>
+    WHEN the user says "Display To Do list" <br><br>
+    THEN the smart mirror should display the user's "To do list" <br><br>
+  SCENARIO_STATUS: To be done
 
-- FEATURE: Reminders\nIn order to complement the day to day tasks\nUsers should be able to set reminders
+#######################################################################
+- FEATURE_TITLE: Reminders
+  FEATURE_DESCRIPTION: In order to complement the day to day tasks <br>Users should be able to set reminders
   SCENARIO: Set Reminder
-    GIVEN a user
-    AND internet connection
-    WHEN the user says "Set reminder for 10 o'clock"
-    THEN the smart mirror should set a reminder with an associated alarm set to go off at 10 o'clock
-  status: UnderConsideration
+  SCENARIO_DESCRIPTION: | 
+    GIVEN a user <br><br>
+    AND internet connection <br><br>
+    WHEN the user says "Set reminder for 10 o'clock" <br><br>
+    THEN the smart mirror should set a reminder with an associated alarm set to go off at 10 o'clock <br><br>
+  SCENARIO_STATUS: Under Consideration
 
-- FEATURE: Multimedia Capture\nIn order to complement the day to day tasks\nUsers should be able to take photos and record audio and video
+#######################################################################
+- FEATURE_TITLE: Multimedia Capture
+  FEATURE_DESCRIPTION: In order to complement the day to day tasks <br>Users should be able to take photos and record audio and video
 
   SCENARIO: Taking a Photo
-    GIVEN a user
-    AND internet connection
-    WHEN the user says "Take a photo"
-    THEN the smart mirror should save the current frame as an image file
+  SCENARIO_DESCRIPTION: | 
+    GIVEN a user <br><br>
+    AND internet connection <br><br>
+    WHEN the user says "Take a photo" <br><br>
+    THEN the smart mirror should save the current frame as an image file <br><br>
+  SCENARIO_STATUS: Not to be done (out of scope)
   
-  SCENARIO: Recording Audio/Video
-    GIVEN a user
-    AND internet connection
-    WHEN the user says "Record audio/video"
-    THEN the smart mirror should record the audio/video stream until the user says "Stop"
-  status: NotToBeDone
+- SCENARIO: Recording Audio/Video
+  SCENARIO_DESCRIPTION: | 
+    GIVEN a user <br><br>
+    AND internet connection <br><br>
+    WHEN the user says "Record audio/video" <br><br>
+    THEN the smart mirror should record the audio/video stream until the user says "Stop" <br><br>
+  SCENARIO_STATUS: Not to be done (out of scope)

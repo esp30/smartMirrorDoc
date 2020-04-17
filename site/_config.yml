@@ -3,7 +3,7 @@ email: pedro.teix@ua.pt
 description: >- # this means to ignore newlines until "baseurl:"
   Make your life easier
 
-baseurl: "" 
+baseurl: "https://esp30.github.io/smartMirrorDoc/" 
 
 # Paths
 assets: 'assets'

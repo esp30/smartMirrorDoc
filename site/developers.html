@@ -1,0 +1,53 @@
+---
+layout: page
+title: For Developers
+description: "Implementation details and decisions. How to extend the existing system"
+button: false
+button-ref: None
+button-description: None
+header-image: true
+header-path: "images/developers.jpg"
+---
+<div id="details">
+    <div class="title">
+        <h2>Notes on the Implementation</h2>
+        <h4>Implementation details and decisions</h4>
+    </div>
+
+    <!--Table-->
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Component</th>
+            <th>Technology</th>
+            <th>Decision Rationale</th>
+            <th>How it was implemented?</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            {% for implementation in site.data.architecture-developers %}
+            <tr>
+                <th scope="row">{{ implementation.component }}</th>
+                <td>{{ implementation.technology }} </td>
+                <td>{{ implementation.decision }} </td>
+                <td>{{ implementation.how}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+
+<div id="details">
+    <div class="title">
+        <h2>How to extend the existing system</h2>
+        <h4>Quick tutorial</h4>
+    </div>
+    
+    TBA
+</div>
+    
+        
+        

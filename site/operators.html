@@ -1,0 +1,58 @@
+---
+layout: page
+title: For Operations
+description: "Details on the operations perspective"
+button: false
+button-ref: None
+button-description: None
+header-image: true
+header-path: "images/developers.jpg"
+---
+
+<div id="diagram">
+    <div class="title">
+    <h2>The Continuous Deployment Pipeline on Jenkins</h2>
+    </div>
+
+    <img class="center" src="{{site.assets}}/images/jenkins-pipeline.png" alt="Project Architecture Diagram" style="max-width:100%;
+    max-height:100%;"></img>
+    <p class="text-muted" style="text-align: center">
+        SmartMirror Pipeline on Jenkins
+    </p>
+</div>
+
+<div id="details">
+    <div class="title">
+        <h3>Details on each stage</h3>
+        <h4>Used plugins, executed tasks, used tools</h4>
+    </div>
+            
+    <!--Table-->
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Stage</th>
+            <th>Purpose</th>
+            <th>Used tools</th>
+            <th>Notes</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            {% for stages in site.data.architecture-stages %}
+            <tr>
+                <th scope="row">{{ stages.stage }}</th>
+                <td>{{ stages.purpose }} </td>
+                <td>{{ stages.tools }} </td>
+                <td>{{ stages.notes}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    
+</div>
+    
+        
+        

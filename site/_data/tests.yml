@@ -1,0 +1,18 @@
+- title: TBA
+  category: TBA
+  text: ""
+  steps: ["1", "2"]
+  online: false
+
+- title: TBA
+  category: TBA
+  text: ""
+  steps: ["1", "2"]
+  online: true
+
+- title: At canteens
+  category: Canteen Worker
+  text: ""
+  steps: ["1", "2"]
+  online: true
+

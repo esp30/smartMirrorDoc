@@ -1,0 +1,63 @@
+---
+layout: page
+title: Architecture
+description: "Conceptual blocks and implementation. Message and data models"
+button: false
+button-ref: None
+button-description: None
+header-image: true
+header-path: "images/developers.jpg"
+---
+
+<div id="diagram">
+    <div class="title">
+    <h2>System Architecture</h2>
+    </div>
+
+    <img class="center" src="{{site.assets}}/images/architecture.png" alt="Project Architecture Diagram" style="max-width:100%;
+    max-height:100%;"></img>
+    <p class="text-muted" style="text-align: center">
+        SmartMirror Detailed Architecture Diagram
+    </p>
+</div>
+
+<div id="details">
+    <div class="title">
+        <h2>Implementation</h2>
+        <h4>The described technologies are the <b>currently used</b> technologies for each block of our system</h4>
+    </div>
+
+    <!--Table-->
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>Component</th>
+            <th>Techonologies/Devices</th>
+            <th>Purpose</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            {% for implementation in site.data.architecture-implementation %}
+            <tr>
+                <th scope="row">{{ implementation.category }}</th>
+                <td>{{ implementation.title }} </td>
+                <td>{{ implementation.tech }} </td>
+                <td>{{ implementation.purpose}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+
+<div id="details">
+    <div class="title">
+        <h2>Message and data models</h2>
+        <h4>TBA</h4>
+    </div>
+    
+        
+        

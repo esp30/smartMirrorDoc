@@ -1,0 +1,92 @@
+---
+layout: page
+title: Testing
+description: "How we assess our system works"
+button: true
+button-ref: "/assets/docs/QA.pdf"
+button-description: "QA Report + Risk Assessment"
+header-image: true
+header-path: "images/developers.jpg"
+toc: true
+---
+
+<div id="acceptance-tests">
+    <div class="title" style="text-align: center">
+        <h2>Specification of tests</h2>
+    </div>
+
+    TBA
+</div>
+
+<div id="acceptance-tests">
+    <div class="title" style="text-align: center">
+        <h2>Implementation</h2>
+    </div>
+
+    TBA
+    Tests can be run ....
+</div>
+
+<br>
+
+    <div id="online">
+        <div class="title" style="text-align: center">
+            <h3>Tested online scenarios</h3>
+        </div>
+        
+        <div class="card-deck">
+            {% for test in site.data.tests %}
+            {% if test.online == false %}
+            <div class="card" style="width: 20rem;">
+                    <div class="card-header card-header-info">
+                        <a style="font-weight: bold">{{test.title}}</a>
+                        <p class="category">For: {{test.category}}</p>
+                    </div>
+                    
+                    <ul class="list-group list-group-flush">
+                        {% for step in test.steps %} 
+                        <li class="list-group-item">{{step}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>    
+    </div>    
+        
+    <div id="offile">
+        <div class="title" style="text-align: center">
+                <h3>Tested offline scenarios</h3>
+        </div>
+
+        <br>
+            
+        <div class="card-deck">
+            {% for test in site.data.tests %}
+            {% if test.online == true %}
+        <div class="card" style="width: 20rem;">
+                <div class="card-header card-header-info">
+                    <a style="font-weight: bold">{{test.title}}</a>
+                    <p class="category">For: {{test.category}}</p>
+                </div>
+                
+                <ul class="list-group list-group-flush">
+                    {% for step in test.steps %} 
+                    <li class="list-group-item">{{step}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>    
+    </div>    
+
+
+<div id="integration-tests">
+    <div class="title" style="text-align: center">
+            <h2>Used tools</h2>
+    </div>
+
+    TBA
+</div>
+

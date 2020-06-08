@@ -67,7 +67,7 @@
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <!-- Getting Started -->
-            {% if page.url == "/scenarios.html" %}
+            {% if page.url == "/getting-started.html" %}
             <li class="active nav-item dropdown">
             {% else %}
             <li class="nav-item dropdown">
@@ -83,22 +83,36 @@
                 <a href="{{ site.baseurl }}/features.html" class="dropdown-item">
                   <i class="material-icons">toc</i> Features
                 </a> -->
-                <a href="{{ site.baseurl }}/scenarios.html" class="dropdown-item">
+                <a href="{{ site.baseurl }}/getting-started.html" class="dropdown-item">
                   <i class="material-icons">person</i> Personas + Scenarios
                 </a>
               </div>
             </li>
             
-            <!-- Development -->            
-            {% if page.url == "/status.html" %}
-            <li class="active nav-item">
+            <!-- The System -->            
+            {% if page.url == "/architecture.html" or page.url == '/developers.html' or page.url == '/operators.html' or page.url == '/tests.html' %} 
+            <li class="active nav-item dropdown">
             {% else %}
-            <li class="nav-item">
+            <li class="nav-item dropdown">
             {% endif %}
-              <a href="{{ site.baseurl }}/status.html" class="nav-link">
-                <i class="material-icons">book</i> Current Status
-              </a>
-            </li> 
+              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                <i class="material-icons">build</i> The System
+              <div class="ripple-container"></div></a>
+              <div class="dropdown-menu dropdown-with-icons">
+                <a href="{{ site.baseurl }}/architecture.html" class="dropdown-item">
+                  <i class="material-icons">dns</i> Architecture
+                </a>
+                <a href="{{ site.baseurl }}/developers.html" class="dropdown-item">
+                  <i class="material-icons">book</i> For Developers
+                </a>
+                <a href="{{ site.baseurl }}/operators.html" class="dropdown-item">
+                  <i class="material-icons">construction</i> For Operators
+                </a>
+                <a href="{{ site.baseurl }}/tests.html" class="dropdown-item">
+                  <i class="material-icons">assignment_turned_in</i> Testing
+                </a>
+              </div>
+            </li>
 
                     
             <!-- Team -->
@@ -108,21 +122,9 @@
             <li class="nav-item">
             {% endif %}
               <a href="{{ site.baseurl }}/team.html" class="nav-link">
-                <i class="material-icons">supervisor_account</i> Team
+                <i class="material-icons">supervisor_account</i> Team and Conclusions
               </a>
             </li>
-
-            <!-- Logbook -->
-            <!-- {% if page.url == "/logbook.html" %}
-            <li class="active nav-item">
-            {% else %}
-            <li class="nav-item">
-            {% endif %}
-              <a href="{{ site.baseurl }}/logbook.html" class="nav-link">
-                <i class="material-icons">schedule</i> Logbook
-              </a>
-            </li> -->
-
            
           </ul>
         </div>
@@ -147,7 +149,7 @@
         <script>
           document.write(new Date().getFullYear())
         </script>, made with <i class="material-icons">favorite</i> by
-        Jorge, Marcelo, Fábio, Paulo, Pedro.
+        Jorge, Marcelo, F?bio, Paulo, Pedro.
       </div>
     </div>
   </footer>

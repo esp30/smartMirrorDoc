@@ -6,7 +6,7 @@ button: false
 button-ref: None
 button-description: None
 header-image: true
-header-path: "images/developers.jpg"
+header-path: "images/operations.jpg"
 ---
 
 <div id="diagram">
@@ -14,11 +14,39 @@ header-path: "images/developers.jpg"
     <h2>The Continuous Deployment Pipeline on Jenkins</h2>
     </div>
 
-    <img class="center" src="{{site.assets}}/images/jenkins-pipeline.png" alt="Project Architecture Diagram" style="max-width:100%;
+    <img class="center" src="{{site.assets}}/images/jenkins-pipeline.png" alt="SmartMirror Pipeline on Jenkins" style="max-width:100%;
     max-height:100%;"></img>
     <p class="text-muted" style="text-align: center">
         SmartMirror Pipeline on Jenkins
     </p>
+</div>
+
+<div id="details">
+    <div class="title">
+        <h3>Modes of execution</h3>
+        <h4>The SmartMirror pipeline is parameterized. It can be run in three different modes:
+        </h4>
+    </div>
+            
+    <!--Table-->
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Mode</th>
+            <th>Explanation</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            {% for mode in site.data.architecture-modes %}
+            <tr>
+                <th scope="row">{{ mode.mode }}</th>
+                <td>{{ mode.purpose }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 <div id="details">
@@ -35,7 +63,7 @@ header-path: "images/developers.jpg"
             <th>Stage</th>
             <th>Purpose</th>
             <th>Used tools</th>
-            <th>Notes</th>
+            <th>Runs on modes</th>
         </tr>
         </thead>
         
@@ -45,14 +73,49 @@ header-path: "images/developers.jpg"
                 <th scope="row">{{ stages.stage }}</th>
                 <td>{{ stages.purpose }} </td>
                 <td>{{ stages.tools }} </td>
-                <td>{{ stages.notes}} </td>
+                <td>{{ stages.notes }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-    
-    
 </div>
+
+<div id="details">
+    <div class="title">
+        <h3>Requirements</h3>
+        <h4>Notes on requirements for the pipeline to work</h4>
+    </div>
+    To deploy and run SmartMirror, we need the following running containers:
+    <ul>
+        <li>Kafka Broker, running on port <code>9093</code></li>
+        <li>MySQL, running on port <code>3037</code></li>
+        <li>A fully configured ELK Stack</li>
+    </ul>
+    Also, even if it's not part of the pipeline itself, the system has specific hardware requirements on the client side:
+    <ul>
+        <li>Camera</li>
+        <li>Microphone</li>
+    </ul>
+</div>
+
+<div id="diagram">
+    <div class="title">
+    <h2>Monitoring</h2>
+    </div>
+
+    <img class="center" src="{{site.assets}}/images/monitoring-example.png" alt="Example of monitoring data that can be visualized on Kibana" style="max-width:100%;
+    max-height:100%;"></img>
+    <p class="text-muted" style="text-align: center">
+        Example of monitoring data that can be visualized on Kibana
+    </p>
+
+    The monitoring is done using the ELK stack (<i>Elasticsearch Logstash Kibana</i>).<br><br>
     
-        
+    To upload our data to Elastic Search, we’re using a appender for logback. This appender is configured on the <code>logback.xml</code>, available on the source code. <br><br>
+    
+    This data can then be visualized on Kibana, by consulting the index <code>“esp30-logs”</code>. 
+As all our logs messages are uploaded there, <b>this data can be filtered to show all kinds of information about the running system, from status to the emotions being captured.</b>
+
+</div>
+
         

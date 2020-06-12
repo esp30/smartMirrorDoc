@@ -22,22 +22,12 @@
     <link href="assets/css/material-kit.css?v=2.0.5" rel="stylesheet">
           
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="assets/images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/images/favicon/ms-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon//favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicon//site.webmanifest">
+    <link rel="mask-icon" href="assets/images/favicon//safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
     
@@ -128,7 +118,7 @@
   <!-- Content -->
   <!-- Header -->
 
-<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style=" background: rgb(25, 39, 160); height: 500px; background-image: url('assets/images/developers.jpg')" >
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style=" background: rgb(25, 39, 160); height: 500px; background-image: url('assets/images/operations.jpg'); background-position: center; ">
 
   <div class="container">
     <div class="row">
@@ -160,11 +150,49 @@
     <h2>The Continuous Deployment Pipeline on Jenkins</h2>
     </div>
 
-    <img class="center" src="assets/images/jenkins-pipeline.png" alt="Project Architecture Diagram" style="max-width:100%;
+    <img class="center" src="assets/images/jenkins-pipeline.png" alt="SmartMirror Pipeline on Jenkins" style="max-width:100%;
     max-height:100%;"></img>
     <p class="text-muted" style="text-align: center">
         SmartMirror Pipeline on Jenkins
     </p>
+</div>
+
+<div id="details">
+    <div class="title">
+        <h3>Modes of execution</h3>
+        <h4>The SmartMirror pipeline is parameterized. It can be run in three different modes:
+        </h4>
+    </div>
+            
+    <!--Table-->
+    <table id="tablePreview" class="table" style="table-layout:fixed">
+        <!--Table head-->
+        <thead>
+        <tr>
+            <th>Mode</th>
+            <th>Explanation</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+            
+            <tr>
+                <th scope="row">Test</th>
+                <td>Only executes the test related steps of the pipeline, such as Test, Cucumber tests. This allows us to run our integration tests quickly, without deploying the app. </td>
+            </tr>
+            
+            <tr>
+                <th scope="row">Deploy</th>
+                <td>Only executes the deployment related steps of the pipeline, such as Deploy to Artifactoy, Deploy back-end, Deploy Doctor App and Deploy on runtime. This allows us to deploy the app while skipping all tests. </td>
+            </tr>
+            
+            <tr>
+                <th scope="row">Test+Deploy</th>
+                <td>Executes the full pipeline. </td>
+            </tr>
+            
+        </tbody>
+    </table>
 </div>
 
 <div id="details">
@@ -181,40 +209,103 @@
             <th>Stage</th>
             <th>Purpose</th>
             <th>Used tools</th>
-            <th>Notes</th>
+            <th>Runs on modes</th>
         </tr>
         </thead>
         
         <tbody>
             
             <tr>
-                <th scope="row">TBA</th>
-                <td>TBA </td>
-                <td>TBA<br> </td>
-                <td>TBA </td>
+                <th scope="row">Test</th>
+                <td>This steps executes some preliminary testing, such as checking if the remote runtime server is active. This is so the new build stops before executing some of the most performance heavy steps in case there’s something wrong with the deployment server. </td>
+                <td>SSH command </td>
+                <td>Test + Deploy <br> Test</td>
             </tr>
             
             <tr>
-                <th scope="row">TBA</th>
-                <td>TBA </td>
-                <td>TBA<br> </td>
-                <td>TBA </td>
+                <th scope="row">Deploy to Artifactory</th>
+                <td>On this step, the main smart mirror app is built and deployed to artifactory, configured on the settings.xml file. </td>
+                <td>Maven<br> </td>
+                <td>Test + Deploy <br> Deploy</td>
             </tr>
             
             <tr>
-                <th scope="row">Monitoring</th>
-                <td>TBA </td>
-                <td>TBA<br> </td>
-                <td>Include here how to deploy, what am i seeing and what? </td>
+                <th scope="row">Deploy back-end</th>
+                <td>Builds a docker image containing our emotion detection program and pushes it to the docker registry </td>
+                <td>Docker<br> </td>
+                <td>Test + Deploy <br> Deploy</td>
+            </tr>
+            
+            <tr>
+                <th scope="row">Deploy Doctor App</th>
+                <td>Builds the doctor app and the corresponding docker image. It pushes the image to the docker registry. </td>
+                <td>Docker </td>
+                <td>Test + Deploy <br> Deploy</td>
+            </tr>
+            
+            <tr>
+                <th scope="row">Cucumber Tests</th>
+                <td>On this step, the integration tests are executed to check the integrity of the data flows. </td>
+                <td>Maven and Cucumber </td>
+                <td>Test + Deploy <br> Test</td>
+            </tr>
+            
+            <tr>
+                <th scope="row">Deploy on runtime</th>
+                <td>In this step the pipeline gets the app running on the runtime server. To do so, it uses an sshagent to connect to the server. Afterwards, it runs a pre-existing script to clean the currently running containers, if there’s any. Then, it fetches the Smart Mirror artifact from artifactory and transfers the Dockerfile from Jenkins, using it to build the docker image and finally it runs the container. To finish, it pulls the emotion detection and doctor app images from the docker registry and runs them. </td>
+                <td>SSH command </td>
+                <td>Test + Deploy <br> Deploy</td>
+            </tr>
+            
+            <tr>
+                <th scope="row">Prepare Reports</th>
+                <td>On this step, the pipeline saves the cucumber tests reports, so they can be consulted on the Jenkins page. </td>
+                <td>Cucumber Reports Jenkins plugin </td>
+                <td>Test + Deploy <br> Test</td>
             </tr>
             
         </tbody>
     </table>
-    
-    
 </div>
+
+<div id="details">
+    <div class="title">
+        <h3>Requirements</h3>
+        <h4>Notes on requirements for the pipeline to work</h4>
+    </div>
+    To deploy and run SmartMirror, we need the following running containers:
+    <ul>
+        <li>Kafka Broker, running on port <code>9093</code></li>
+        <li>MySQL, running on port <code>3037</code></li>
+        <li>A fully configured ELK Stack</li>
+    </ul>
+    Also, even if it's not part of the pipeline itself, the system has specific hardware requirements on the client side:
+    <ul>
+        <li>Camera</li>
+        <li>Microphone</li>
+    </ul>
+</div>
+
+<div id="diagram">
+    <div class="title">
+    <h2>Monitoring</h2>
+    </div>
+
+    <img class="center" src="assets/images/monitoring-example.png" alt="Example of monitoring data that can be visualized on Kibana" style="max-width:100%;
+    max-height:100%;"></img>
+    <p class="text-muted" style="text-align: center">
+        Example of monitoring data that can be visualized on Kibana
+    </p>
+
+    The monitoring is done using the ELK stack (<i>Elasticsearch Logstash Kibana</i>).<br><br>
     
-        
+    To upload our data to Elastic Search, we’re using a appender for logback. This appender is configured on the <code>logback.xml</code>, available on the source code. <br><br>
+    
+    This data can then be visualized on Kibana, by consulting the index <code>“esp30-logs”</code>. 
+As all our logs messages are uploaded there, <b>this data can be filtered to show all kinds of information about the running system, from status to the emotions being captured.</b>
+
+</div>
+
         
 
               

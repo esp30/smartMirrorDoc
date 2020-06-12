@@ -1,17 +1,44 @@
 
-- stage: TBA
-  purpose: TBA
-  tools: TBA<br>
-  notes: TBA
+- stage: Test 
+  purpose: This steps executes some preliminary testing, such as checking if the remote runtime server is active. This is so the new build stops before executing some of the most performance heavy steps in case there’s something wrong with the deployment server.
+  tools: SSH command
+  notes: Test + Deploy <br> Test
 
-- stage: TBA
-  purpose: TBA
-  tools: TBA<br>
-  notes: TBA
+- stage: Deploy to Artifactory 
+  purpose: On this step, the main smart mirror app is built and deployed to artifactory, configured on the settings.xml file.
+  tools: Maven<br>
+  notes: Test + Deploy <br> Deploy
 
-- stage: Monitoring
-  purpose: TBA
-  tools: TBA<br>
-  notes: Include here how to deploy, what am i seeing and what?
+- stage: Deploy back-end 
+  purpose: Builds a docker image containing our emotion detection program and pushes it to the docker registry
+  tools: Docker<br>
+  notes: Test + Deploy <br> Deploy
+
+- stage: Deploy Doctor App
+  purpose: Builds the doctor app and the corresponding docker image. It pushes the image to the docker registry.
+  tools: Docker
+  notes: Test + Deploy <br> Deploy
+
+- stage: Cucumber Tests
+  purpose: On this step, the integration tests are executed to check the integrity of the data flows.
+  tools: Maven and Cucumber
+  notes: Test + Deploy <br> Test
+
+- stage: Deploy on runtime
+  purpose: In this step the pipeline gets the app running on the runtime server. To do so, it uses an sshagent to connect to the server. Afterwards, it runs a pre-existing script to clean the currently running containers, if there’s any. Then, it fetches the Smart Mirror artifact from artifactory and transfers the Dockerfile from Jenkins, using it to build the docker image and finally it runs the container. To finish, it pulls the emotion detection and doctor app images from the docker registry and runs them.
+  tools: SSH command
+  notes: Test + Deploy <br> Deploy
+
+- stage: Prepare Reports
+  purpose: On this step, the pipeline saves the cucumber tests reports, so they can be consulted on the Jenkins page.
+  tools: Cucumber Reports Jenkins plugin
+  notes: Test + Deploy <br> Test
+
+
+
+
+
+ 
+
 
 

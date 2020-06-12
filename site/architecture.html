@@ -56,8 +56,35 @@ header-path: "images/developers.jpg"
 <div id="details">
     <div class="title">
         <h2>Message and data models</h2>
-        <h4>TBA</h4>
+        <h4>Data flow on the system and format of the messages</h4>
     </div>
+    
+    <h5>On the flow of data and usage of Kafka</h5>
+    The <b>main stream of data is exchanged between</b> our two main services: <b>the core application and the emotion detection module</b>. This communication is achieved <b>through a Kafka Broker</b> already deployed. <br>
+    The messages are exchanged between <b>two main topics: “p30-photos” and “p30-classification”.</b>
+    
+    <h5>Data structure</h5>
+    Since we are essentially dealing with a proof of concept system, and we don’t actually have strict guidelines on how data should look like or even flow, <b>the decision was to stick with a simple data structure.</b> <br><br>
+    
+    The message structure always follows a JSON like format:
+    <ul>
+        <li>For the first mentioned topic (<b>“p30-photos”</b>), we are essentially encoding the image taken as a photo in the main application, encoding it as a base 64 string, and building a JSON object as following before sending it to the “p30-photos” topic: <br>
+
+        <code class="language-json">p30-photos-json = {id: UNIQUE_IDENTIFIER, image: “data:image/png;base64, iVBORw…”}</code></li><br>
+
+        <li>The classification topic (<b>“p30-classification”</b>) aims to answer this first topic information. This is, the core application sends the previously shown JSON message to the corresponding topic read by the emotion detection module, and this last should parse the information, compute the necessary information and respond with a similar message to the emote classification topic. The information structure is, once again, similar to the previously shown: <br>
+
+        <code class="language-json">p30-classification-json = {id: UNIQUE_IDENTIFIER, emote: “happy”}</code><br><br>
+        
+        The desired information, in this case the <b>computed emotion, is then displayed in the front-end section of the core application</b> giving the user the ability to understand what is being sent to the main application endpoints, and ultimately, regarding the doctor scenarios, his doctor or therapist.<br><br>
+
+        <li>It’s also worth mentioning that the “p30-classification” topic is listened by the application <b>database</b> controller where the information is saved. The main idea is that the application endpoint reads the stored information before returning it, making information consistent in the database as well as maintaining parsed and structured data before being made available in the main endpoints.
+        Each entry on the database has the following structure: <br>
+            
+        <code>id: integer | timestamp: integer | user: string | value: string</code></li>
+
+    </ul>
+</div>
     
         
         

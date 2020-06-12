@@ -14,6 +14,19 @@ header-path: "images/developers.jpg"
         <h4>Implementation details and decisions</h4>
     </div>
 
+    <div style="text-align: center;">
+    We wanted Smart Mirror to be as modular possible and our <b>microservice based architecture</b> helped us accomplish that. Except for the doctor app, the modules can be run independently. <b>The emotion detection is done in a way that could be easily implemented in other systems</b> other than Smart Mirror. <br><br>
+
+    While we envisioned SmartMirror to be implemented on an actual mirror, <b>due to the lack of hardware, we decided for a fully digital implementation, as proof of concept.</b> <br><br>
+
+    Due to the nature of the project, SmartMirror <b>captures both sound and image.</b> Since this is being deployed in a remote machine, we had to find a way to access the user microphone and camera. <br>
+    To do so, <b>we relied on HTLM5 video tag</b>, to access the webcam and Javascript Speech Recognition library, for voice commands, effectively shifting the capturing responsibilities to the client-side browser. The downsides of this are that the Speech Recognition features only work on Chrome Browsers (at the time) and that the application can only be accessed through HTTPS. <br><br><br>
+    </div>
+
+    <div class="title">
+        <h2>How it was implemented</h2>
+        <h4>SmartMirror consists of 2 main modules plus a service for proof of concept of the usage of the system by third-parties:</h4>
+    </div>
     <!--Table-->
     <table id="tablePreview" class="table" style="table-layout:fixed">
         <!--Table head-->
@@ -21,8 +34,8 @@ header-path: "images/developers.jpg"
         <tr>
             <th>Component</th>
             <th>Technology</th>
-            <th>Decision Rationale</th>
-            <th>How it was implemented?</th>
+            <th>Runtime</th>
+            <th>Purpose</th>
         </tr>
         </thead>
         
@@ -31,13 +44,15 @@ header-path: "images/developers.jpg"
             <tr>
                 <th scope="row">{{ implementation.component }}</th>
                 <td>{{ implementation.technology }} </td>
-                <td>{{ implementation.decision }} </td>
-                <td>{{ implementation.how}} </td>
+                <td>{{ implementation.runtime }} </td>
+                <td>{{ implementation.purpose}} </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
     
+    
+
 </div>
 
 <div id="details">
@@ -46,7 +61,21 @@ header-path: "images/developers.jpg"
         <h4>Quick tutorial</h4>
     </div>
     
-    TBA
+    To start extending SmartMirror, you should first familiarize yourself with the repository structure:
+    <ul>
+        <li>On the folder <code>“/src”</code> you can find the code, test and resources of the SmartMirror core. The <code>pom.xml</code> relating to this module is on the root of the project</li>
+        <li>The emotion detection module source code and corresponding models are available on the folder <code>“/python_src”</code></li>
+        <li>As for the Doctor App, you can find the code, resources and pom.xml on the <code>/api_microservice/api-microservice-smartMirror</code> folder.</li>
+    </ul>
+
+    Have also in mind that:
+	<ul>
+        <li>Each of the folders mentioned above contains a <code>Dockerfile</code> to build the corresponding docker image.</li>
+        <li>Both Spring Boot apps run on the embedded Apache Tomcat server, so no additional application service (e.g Payara) is necessary but can be used if wanted by deploying the JAR file that results from running <code>mvn deploy -s settings.xml</code>.</li>
+        <li>The SmartMirror core module front-end only works via HTTPS, which means the connection as to be secured with a SSL certificate. This certificate is used is kept on the resources of the module and has a password. Also due to HTTPS, the Apache Tomcat server port is configured on <code>8443</code>.</li>
+        <li>The SmartMirror core app assumes there’s a MySQL database running on port <code>3307</code>, with the credentials <code>(root,password)</code>. This can be changed at any time on application.properties file.</li>
+        <li>The SmartMirror core app tries to init a connection with a Kafka broker on port <code>9093</code> after accessing the Mirror page. This configuration is on the <code>WebCamController</code> and can/should be changed accordingly to your needs.</li>
+		<li>The topic <code>p30-classification</code> needs to be created previously on the Kafka broker before deploying the application, or the system will not work.</li>
 </div>
     
         

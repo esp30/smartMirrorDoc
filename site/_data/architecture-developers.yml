@@ -1,11 +1,18 @@
 
-- component: TBA
-  technology: TBA
-  decision: TBA<br>
-  how: TBA
+- component: Core
+  technology: Java<br>Spring Framework
+  runtime: Running on a docker container, with the name esp30-smartmirror, on port 30043 of 192.168.160.103.
+  purpose: This module exposes the mirror webpage. On this page the user can take a picture, either by clicking or by voice commands. The picture is then converted to base64 on the javascript and sent via a POST request to the backend to be redirected to the emotion detection module to be processed. This module also exposes a REST API. This can be used by the doctor to check on his patients. 
 
-- component: TBA
-  technology: TBA
-  decision: TBA<br>
-  how: TBA
+- component: Emotion Detection Module
+  technology: Python<br>OpenCV library
+  runtime: Running on a docker container, with the name esp30-smartmirror-emotiondetection, on 192.168.160.103.
+  purpose: This module receives images in Base64 via messages on a Kafka topic, and processes them. If the module can classify the emotion of the image, it replies with a JSON file containing the resulting emotion.
+
+- component: Doctor application
+  technology: Java<br>Spring Framework
+  runtime: Running on a docker container, with the name esp30-smartmirror-docapp, on port 30020 of 192.168.160.103.
+  purpose: This module uses our API and shows the information it fetches in Web Page.
+
+
 

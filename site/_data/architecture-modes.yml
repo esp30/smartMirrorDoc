@@ -1,0 +1,11 @@
+
+- mode: Test
+  purpose: Only executes the test related steps of the pipeline, such as Test, Cucumber tests. This allows us to run our integration tests quickly, without deploying the app.
+
+- mode: Deploy
+  purpose: Only executes the deployment related steps of the pipeline, such as Deploy to Artifactoy, Deploy back-end, Deploy Doctor App and Deploy on runtime. This allows us to deploy the app while skipping all tests.
+
+- mode: Test+Deploy
+  purpose: Executes the full pipeline.
+
+

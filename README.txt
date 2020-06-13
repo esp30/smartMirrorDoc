@@ -1,0 +1,1 @@
+To build the site, you need to have Jekyll installed. Then, just run jekyll build

@@ -365,20 +365,30 @@ Then the smart mirror should record the audio/video stream until the user says "
         <h2>Implementation</h2>
     </div>
 
-    TBA
+    From the defined features, we chose to implement the first two (Report Status and Remotely Check Patient Status). <br><br>
+
+    Having in mind a <b>Behavior-driven development</b> (BDD) mindset, the defined scenarios for each feature were the basis for the testing of the system. <i>Post-production tests based on those scenarios were implemented using the Cucumber tool.</i><br><br>
+
+    <b>To make the testing process more robust and also quicker</b> during the execution of the DevOps pipeline, we opted to <b>divide the tests</b> implemented using the Cucumber tool <b>into 2 sets: online and offline tests</b>. The difference between these 2 types lies on the usage or not of the external API the system provides. This division was useful to make sure that, if needed, only part of the tests can be run when needed (and not all of them) and also to allow parallelization of the execution of the 2 sets of tests in the pipeline (see the Cucumber Tests stages <a href="">here</a>). <br><br>
+
+    It was also developed an <b>integration test</b> that uses the API to retrieve the emotion counts (statistics), then it injects a new image in the system, simulating a photo taken by the mirror. This image is processed by the emotion detection module that adds the new emotion to the system. The last step of this test requires a new request to the same end point of the API which will allow for a comparison between the first emotion counts and the updated one. The difference between them should correspond to the emotion present in the image injected. <br><br>
+
+    <b>Tests can be run through the execution of the Jenkins pipeline</b> of the project, where it's possible to see the reports prepared in the last stage of the pipeline as illustrated below (<i>Cucumber reports Jenkins plugin</i> is required). <br><br>
+
+    <img class="center" src="assets/images/cucumber_example.png" alt="Project Architecture Diagram" style="max-width:100%;
+    max-height:100%;"></img>
+    <p class="text-muted" style="text-align: center">
+        Reports for feature 2 (Remotely Check Patient Status) as seen in the Jenkins dashboard
+    </p>
+
+    <br><br>
+   
+    <b>Alternatively</b>, the tests can be run using <code>mvn test -Dcucumber.options="--tags @online/@offline --tags ~@not-implemented" -s settings.xml</code> if you only want to run online/offline tests or <code>mvn test -Dcucumber.options= --tags ~@not-implemented" -s settings.xml</code> if you want to run all the tests. In these situations, the results will be available in the file <code>target/cucumber/report.json</code>
 
 </div>
 
 <br>
 
-
-<div id="integration-tests">
-    <div class="title" style="text-align: center">
-            <h2>Used tools</h2>
-    </div>
-
-    TBA
-</div>
 
 
               

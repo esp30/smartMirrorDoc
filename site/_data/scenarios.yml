@@ -3,73 +3,67 @@
   FEATURE_DESCRIPTION: In order to get better medical care <br> Users should be able to easily report their current status
   SCENARIO: Choose to Report
   SCENARIO_DESCRIPTION: | 
-    GIVEN a user with a medical condition <br><br>
-    WHEN the user steps in front of the mirror <br><br>
-    AND says "Status report" <br><br>
-    THEN the smart mirror should assess his status (mood) <br><br>
-  SCENARIO_STATUS: To be done
+    Given a user with a medical condition <br><br>
+    When the user is happy <br><br>
+    And the user steps in front of the mirror and says "Status report" <br><br>
+    Then the smart mirror should assess the user mood as happy <br><br>
+  SCENARIO_STATUS: Done
 
 - SCENARIO: Report on Wake (RoW)
   SCENARIO_DESCRIPTION: |
-    GIVEN a user with a medical condition <br><br>
-    AND said user just woke up <br><br>
-    WHEN the user steps in front of the mirror <br><br>
-    AND stands there for a few seconds <br><br>
-    THEN the smart mirror should assess his status (mood) <br><br>
-  SCENARIO_STATUS: To be done
+    Given a user with a medical condition <br><br>
+    When the user is not happy <br><br>
+    And the user just woke up and steps in front of the mirror for a few seconds <br><br>
+    Then the smart mirror should assess the user mood as neutral <br><br>
+  SCENARIO_STATUS: Done
 
 #######################################################################
 - FEATURE_TITLE: Remotely Check Patient Status
   FEATURE_DESCRIPTION: In order to provide better medical care <br> Users should be able to easily check their patient's (latest) reported status
-  SCENARIO: Notification
+  SCENARIO: Emotion Trends
   SCENARIO_DESCRIPTION: |
-    GIVEN a user with a medical condition <br><br>
-    AND a medical professional that cares for said user <br><br>
-    AND a mobile app that accesses the system's public API <br><br>
-    AND internet connection <br><br> 
-    WHEN the system records a status (mood) change with the user <br><br>
-    THEN the medical professional should be notified via the mobile app <br><br>
-  SCENARIO_STATUS: To be done
+    Given a medical professional that needs to know the trends of emotions for all users<br><br>
+    And a mobile app that accesses the system's public API<br><br>
+    Then the medical professional should be able to obtain all emotions registered without any user identification<br><br>
+  SCENARIO_STATUS: Done
 
 - SCENARIO: Latest Reports
   SCENARIO_DESCRIPTION: | 
-    GIVEN a user with a medical condition <br><br>
-    AND a medical professional that cares for said user <br><br>
-    AND a mobile app that accesses the system's public API <br><br>
-    AND internet connection <br><br>
-    WHEN the medical professional wishes to check on their patient latest reports <br><br>
-    THEN the medical professional should be able to access that information using the mobile app <br><br>
-  SCENARIO_STATUS: To be done
+    Given a medical professional that takes care of a user<br><br>
+    And a mobile app that accesses the system's public API<br><br>
+    When the medical professional wishes to check on their latest reports<br><br>
+    Then the medical professional should be able to access the latest reports of the patient using the mobile app<br><br>
+  SCENARIO_STATUS: Done
 
 #######################################################################
 - FEATURE_TITLE: Display Informations
   FEATURE_DESCRIPTION: In order to complement the day to day tasks <br> Users should be able to get useful informations (like the weather)
   SCENARIO: Checking the Weather
   SCENARIO_DESCRIPTION: | 
-    GIVEN a user <br><br>
-    AND internet connection <br><br>
-    WHEN the user says "Display weather" <br><br>
-    THEN the smart mirror should display the weather for the day <br><br>
-  SCENARIO_STATUS: To be done
+    Given a user <br><br>
+    And internet connection <br><br>
+    When the user says "Display weather" <br><br>
+    Then the smart mirror should display the weather for the day <br><br>
+  SCENARIO_STATUS: Not done (out of scope)
   
 - SCENARIO: Checking To Do List
   SCENARIO_DESCRIPTION: | 
-    GIVEN a user <br><br>
-    AND internet connection <br><br>
-    WHEN the user says "Display To Do list" <br><br>
-    THEN the smart mirror should display the user's "To do list" <br><br>
-  SCENARIO_STATUS: To be done
+    Given a user <br><br>
+    And internet connection <br><br>
+    When the user says "Display To Do list" <br><br>
+    Then the smart mirror should display the user's "To do list" <br><br>
+  SCENARIO_STATUS: Not done (out of scope)
 
 #######################################################################
 - FEATURE_TITLE: Reminders
   FEATURE_DESCRIPTION: In order to complement the day to day tasks <br>Users should be able to set reminders
   SCENARIO: Set Reminder
   SCENARIO_DESCRIPTION: | 
-    GIVEN a user <br><br>
-    AND internet connection <br><br>
-    WHEN the user says "Set reminder for 10 o'clock" <br><br>
-    THEN the smart mirror should set a reminder with an associated alarm set to go off at 10 o'clock <br><br>
-  SCENARIO_STATUS: Under Consideration
+    Given a user <br><br>
+    And internet connection <br><br>
+    When the user says "Set reminder for 10 o'clock" <br><br>
+    Then the smart mirror should set a reminder with an associated alarm set to go off at 10 o'clock <br><br>
+  SCENARIO_STATUS: Not done (out of scope)
 
 #######################################################################
 - FEATURE_TITLE: Multimedia Capture
@@ -77,16 +71,16 @@
 
   SCENARIO: Taking a Photo
   SCENARIO_DESCRIPTION: | 
-    GIVEN a user <br><br>
-    AND internet connection <br><br>
-    WHEN the user says "Take a photo" <br><br>
-    THEN the smart mirror should save the current frame as an image file <br><br>
-  SCENARIO_STATUS: Not to be done (out of scope)
+    Given a user <br><br>
+    And internet connection <br><br>
+    When the user says "Take a photo" <br><br>
+    Then the smart mirror should save the current frame as an image file <br><br>
+  SCENARIO_STATUS: Not done (out of scope)
   
 - SCENARIO: Recording Audio/Video
   SCENARIO_DESCRIPTION: | 
-    GIVEN a user <br><br>
-    AND internet connection <br><br>
-    WHEN the user says "Record audio/video" <br><br>
-    THEN the smart mirror should record the audio/video stream until the user says "Stop" <br><br>
-  SCENARIO_STATUS: Not to be done (out of scope)
+    Given a user <br><br>
+    And internet connection <br><br>
+    When the user says "Record audio/video" <br><br>
+    Then the smart mirror should record the audio/video stream until the user says "Stop" <br><br>
+  SCENARIO_STATUS: Not done (out of scope)

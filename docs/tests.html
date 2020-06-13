@@ -60,21 +60,12 @@
             
             <li class="nav-item dropdown">
             
-              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+              
+              <a href="https://esp30.github.io/smartMirrorDoc/getting-started.html" class="nav-link">
                 <i class="material-icons">explore</i> Getting Started
               </a>
-              <div class="ripple-container"></div></a>
-              <div class="dropdown-menu dropdown-with-icons">
-<!--                 <a href="https://esp30.github.io/smartMirrorDoc/client.html" class="dropdown-item">
-                  <i class="material-icons">explore</i> Getting Started
-                </a>
-                <a href="https://esp30.github.io/smartMirrorDoc/features.html" class="dropdown-item">
-                  <i class="material-icons">toc</i> Features
-                </a> -->
-                <a href="https://esp30.github.io/smartMirrorDoc/getting-started.html" class="dropdown-item">
-                  <i class="material-icons">person</i> Personas + Scenarios
-                </a>
-              </div>
+             
+        
             </li>
             
             <!-- The System -->            
@@ -145,13 +136,229 @@
           </div>
           
           <div id="content" class="col-lg-10">
-              <div id="acceptance-tests">
+              <div id="how">
     <div class="title" style="text-align: center">
-        <h2>Specification of tests</h2>
+        <h2>Specification</h2>
+        <h3 data-toc-skip>Personas and Scenarions</h3>
+        Based on a User Centered Design perspective, we defined the key personas and usage scenarios to define the acceptance criteria of our system. These criteria were the support for most of implemented tests, as described in the next section.
     </div>
 
-    TBA
 </div>
+
+<div id="how">
+    <div class="title" style="text-align: center">
+        <h3>Persona</h3>
+        <h4 data-toc-skip>Who will use our system and why</h4>
+    </div>
+
+    <div class="card-deck">
+        
+        <div class="card" style="width: 20rem;">
+            <a>
+                <img class="card-img-top" style="width: 100%;" src="assets/images/persona/harold.jpg" alt="Harold">
+            </a>
+
+            <div class="card-header card-header-primary">
+                <a style="font-weight: bold">Harold</a>
+                <p class="category">Retired elder</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="font-weight: bold">Motivations:</li>
+                 
+                    <li class="list-group-item">Harold is a 75 years old now-retired Hungarian electrical engineer. Harold is also the carrier of a disease, similar to bipolar disorder, which causes him to change his temper in an abrupt, incontrollable way.</li>
+                 
+                    <li class="list-group-item">His family is very supportive of his condition. However, as any severe medical condition, Harold requires medical follow-up. In an ideal situation, his doctor would be warned every time his temper changed in order to track and analyze his behavior patterns. Since this isn’t possible, Harold got himself a SmartMirror.</li>
+                 
+                    <li class="list-group-item">Harold’s account is setup so that every time he stands near, looking at his SmartMirror, the mirror takes a photograph, analyzes the image and determines Harold’s current mood. This information is then sent to his doctor. It also sends a notification every time the system detects a change in his mood.</li>
+                
+            </ul>
+        </div>
+        
+        <div class="card" style="width: 20rem;">
+            <a>
+                <img class="card-img-top" style="width: 100%;" src="assets/images/persona/doctor.jpg" alt="John">
+            </a>
+
+            <div class="card-header card-header-primary">
+                <a style="font-weight: bold">John</a>
+                <p class="category">Doctor</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="font-weight: bold">Motivations:</li>
+                 
+                    <li class="list-group-item">John is Harold’s doctor. He cares a lot for him and tries to keep up with his current state (mood) at all time.</li>
+                 
+                    <li class="list-group-item">In order to be able to remotely know how’s his patient doing, he downloaded an app that notifies him whenever there’s a mood change with Harold. It also allows him to look at statistics regarding the latest readings.</li>
+                
+            </ul>
+        </div>
+        
+        <div class="card" style="width: 20rem;">
+            <a>
+                <img class="card-img-top" style="width: 100%;" src="assets/images/persona/twins.jpg" alt="Joanne and Madison">
+            </a>
+
+            <div class="card-header card-header-primary">
+                <a style="font-weight: bold">Joanne and Madison</a>
+                <p class="category"></p>
+            </div>
+            <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="font-weight: bold">Motivations:</li>
+                 
+                    <li class="list-group-item">Joanne and Madison are two 20 years old twin sisters.</li>
+                 
+                    <li class="list-group-item">These twin sisters are not a copy of each other. Joanne is enrolled in an Engineering in an University in the north while her sister Madison is perfecting her dancing skills in an dance academy, down south.</li>
+                 
+                    <li class="list-group-item">Although their different interests, they really like and care for each other and make video calls whenever they can. However, Madison is often busy practicing and having her laptop opened on the floor while she’s trying out new moves is, in the very least, risky. Since Madison needs a mirror to practice, Joanne got her a SmartMirror. This way, they can talk while she practices and Joanne can see her new moves firsthand.</li>
+                
+            </ul>
+        </div>
+        
+    </div>
+
+<div id="how">
+<div class="title" style="text-align: center">
+    <h3>Usage Scenarios</h2>
+    <h4 data-toc-skip>How the system will be used</h4>
+</div>
+
+<div class="list-group">
+        <!--Table-->
+        <table id="tablePreview" class="table" style="table-layout:fixed">
+            <!--Table head-->
+            <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Scenario</th>
+                <th>Scenario Description</th>
+                <th>Scenario Status</th>
+            </tr>
+            </thead>
+            
+            <tbody>
+                
+                
+                <tr>
+                    <th scope="row">Report Status<br>In order to get better medical care <br> Users should be able to easily report their current status</th>
+                    <td>Choose to Report </td>
+                    <td>Given a user with a medical condition <br><br>
+When the user is happy <br><br>
+And the user steps in front of the mirror and says "Status report" <br><br>
+Then the smart mirror should assess the user mood as happy <br><br>
+</td>
+                    <td>Done</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row"><br></th>
+                    <td>Report on Wake (RoW) </td>
+                    <td>Given a user with a medical condition <br><br>
+When the user is not happy <br><br>
+And the user just woke up and steps in front of the mirror for a few seconds <br><br>
+Then the smart mirror should assess the user mood as neutral <br><br>
+</td>
+                    <td>Done</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">Remotely Check Patient Status<br>In order to provide better medical care <br> Users should be able to easily check their patient's (latest) reported status</th>
+                    <td>Emotion Trends </td>
+                    <td>Given a medical professional that needs to know the trends of emotions for all users<br><br>
+And a mobile app that accesses the system's public API<br><br>
+Then the medical professional should be able to obtain all emotions registered without any user identification<br><br>
+</td>
+                    <td>Done</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row"><br></th>
+                    <td>Latest Reports </td>
+                    <td>Given a medical professional that takes care of a user<br><br>
+And a mobile app that accesses the system's public API<br><br>
+When the medical professional wishes to check on their latest reports<br><br>
+Then the medical professional should be able to access the latest reports of the patient using the mobile app<br><br>
+</td>
+                    <td>Done</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">Display Informations<br>In order to complement the day to day tasks <br> Users should be able to get useful informations (like the weather)</th>
+                    <td>Checking the Weather </td>
+                    <td>Given a user <br><br>
+And internet connection <br><br>
+When the user says "Display weather" <br><br>
+Then the smart mirror should display the weather for the day <br><br>
+</td>
+                    <td>Not done (out of scope)</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row"><br></th>
+                    <td>Checking To Do List </td>
+                    <td>Given a user <br><br>
+And internet connection <br><br>
+When the user says "Display To Do list" <br><br>
+Then the smart mirror should display the user's "To do list" <br><br>
+</td>
+                    <td>Not done (out of scope)</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">Reminders<br>In order to complement the day to day tasks <br>Users should be able to set reminders</th>
+                    <td>Set Reminder </td>
+                    <td>Given a user <br><br>
+And internet connection <br><br>
+When the user says "Set reminder for 10 o'clock" <br><br>
+Then the smart mirror should set a reminder with an associated alarm set to go off at 10 o'clock <br><br>
+</td>
+                    <td>Not done (out of scope)</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row">Multimedia Capture<br>In order to complement the day to day tasks <br>Users should be able to take photos and record audio and video</th>
+                    <td>Taking a Photo </td>
+                    <td>Given a user <br><br>
+And internet connection <br><br>
+When the user says "Take a photo" <br><br>
+Then the smart mirror should save the current frame as an image file <br><br>
+</td>
+                    <td>Not done (out of scope)</td>
+                </tr>
+                
+                
+                
+                <tr>
+                    <th scope="row"><br></th>
+                    <td>Recording Audio/Video </td>
+                    <td>Given a user <br><br>
+And internet connection <br><br>
+When the user says "Record audio/video" <br><br>
+Then the smart mirror should record the audio/video stream until the user says "Stop" <br><br>
+</td>
+                    <td>Not done (out of scope)</td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+        
+        
+    </div>
+    
 
 <div id="acceptance-tests">
     <div class="title" style="text-align: center">
@@ -159,89 +366,10 @@
     </div>
 
     TBA
-    Tests can be run ....
+
 </div>
 
 <br>
-
-    <div id="online">
-        <div class="title" style="text-align: center">
-            <h3>Tested online scenarios</h3>
-        </div>
-        
-        <div class="card-deck">
-            
-            
-            <div class="card" style="width: 20rem;">
-                    <div class="card-header card-header-info">
-                        <a style="font-weight: bold">TBA</a>
-                        <p class="category">For: TBA</p>
-                    </div>
-                    
-                    <ul class="list-group list-group-flush">
-                         
-                        <li class="list-group-item">1</li>
-                         
-                        <li class="list-group-item">2</li>
-                        
-                    </ul>
-                </div>
-                
-                
-            
-                
-            
-                
-            </div>    
-    </div>    
-        
-    <div id="offile">
-        <div class="title" style="text-align: center">
-                <h3>Tested offline scenarios</h3>
-        </div>
-
-        <br>
-            
-        <div class="card-deck">
-            
-            
-            
-            
-        <div class="card" style="width: 20rem;">
-                <div class="card-header card-header-info">
-                    <a style="font-weight: bold">TBA</a>
-                    <p class="category">For: TBA</p>
-                </div>
-                
-                <ul class="list-group list-group-flush">
-                     
-                    <li class="list-group-item">1</li>
-                     
-                    <li class="list-group-item">2</li>
-                    
-                </ul>
-            </div>
-            
-            
-            
-        <div class="card" style="width: 20rem;">
-                <div class="card-header card-header-info">
-                    <a style="font-weight: bold">TBA</a>
-                    <p class="category">For: TBA</p>
-                </div>
-                
-                <ul class="list-group list-group-flush">
-                     
-                    <li class="list-group-item">1</li>
-                     
-                    <li class="list-group-item">2</li>
-                    
-                </ul>
-            </div>
-            
-            
-        </div>    
-    </div>    
 
 
 <div id="integration-tests">

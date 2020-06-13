@@ -1,81 +1,123 @@
 ---
 layout: page
-title: Personas and Scenarios
-description: "Who will use our system and why"
+title: Getting Started
+description: "Introduction to the SmartMirror"
 button: false
 button_ref: None
 button_description: None
 comments: false
 header-image: true
 header-path: "images/getting-started.jpg"
-toc: false
+toc: true
 ---
-
-<!-- Who would have this problem ? -->
-<div id="how">
-        <div class="title" style="text-align: center">
-            <h2>Persona</h2>
-            <h3 data-toc-skip>Who will use our system and why</h3>
-        </div>
-    
-        <div class="card-deck">
-            {% for persona in site.data.personas %}
-            <div class="card" style="width: 20rem;">
-                <a>
-                    <img class="card-img-top" style="width: 100%;" src="{{ site.assets }}/images/persona/{{ persona.photo }}" alt="{{ persona.name }}">
-                </a>
-    
-                <div class="card-header card-header-primary">
-                    <a style="font-weight: bold">{{persona.name}}</a>
-                    <p class="category">{{persona.description}}</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                        <li class="list-group-item" style="font-weight: bold">Motivations:</li>
-                    {% for characteristic in persona.characteristics %} 
-                        <li class="list-group-item">{{characteristic}}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endfor %}
+<!-- Introduction -->
+<div id="what" style="text-align: center">
+    <div id="what" style="text-align: center">
+        <div class="title">
+            <h2 id="intro">Smart Mirror? What's that all about?</h2>
         </div>
 
-<div id="how">
-    <div class="title" style="text-align: center">
-        <h2>Usage Scenarios</h2>
-        <h3 data-toc-skip>How the system will be used</h3>
+        <h3>
+          Mihir Patkar <a href="https://www.makeuseof.com/tag/6-best-raspberry-pi-smart-mirror-projects-weve-seen-far/">says</a> that the smart mirror of the future won’t just say you’re the prettiest of them all. It’ll also tell you the time, date, weather outside, upcoming calendar appointments, and more. <br><br>
+
+          With the SmartMirror project, we intended to implement a SmartMirror smarter than that description, with 2 major concerns in mind: usability and health.<br><br>
+
+          We realized it could be very interesting to analyze a person's emotion, right from the SmartMirror. This would be very useful for example in situations where patients have to be constantly monitored by medical staff, even when they're at home. <br><br>
+
+          But we also understood that, having in mind the fact the SmartMirror is in fact, a mirror, a touch or keyboard based interaction would not work. Speech recognition was the best solution to provide users a hassle-free experience.<br><br>
+
+          And from these 2 concerns, our SmartMirror proof of concept was born.<br><br>
+          
+          Want to know how to use it? Just go <a href="https://192.168.160.103:30043/">here</a> and say <i>photo</i>, then <i>photo</i>. You should see an emoji telling you if you're happy or not.
+        </h3>
+    </div>
+    
+</div>
+
+<br>
+<!-- Features -->
+<div class="container">
+
+    <div class="section-title aos-init aos-animate" data-aos="fade-up">
+        <h2>Features</h2>
+        <h3 data-toc-skip>Main features currently implemented</h3>
+        <br>
     </div>
 
-
-    <div class="list-group">
-            <!--Table-->
-            <table id="tablePreview" class="table" style="table-layout:fixed">
-                <!--Table head-->
-                <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>Scenario</th>
-                    <th>Scenario Description</th>
-                    <th>Scenario Status</th>
-                </tr>
-                </thead>
-                
-                <tbody>
-                    {% for feature in site.data.scenarios %}
-                    {% if feature.FEATURE-STATUS == ToDo %}
-                    <tr>
-                        <th scope="row">{{ feature.FEATURE_TITLE }}<br>{{ feature.FEATURE_DESCRIPTION }}</th>
-                        <td>{{ feature.SCENARIO }} </td>
-                        <td>{{ feature.SCENARIO_DESCRIPTION }}</td>
-                        <td>{{ feature.SCENARIO_STATUS }}</td>
-                    </tr>
-                    {% endif %}
-                    {% endfor %}
-                </tbody>
-            </table>
-            
-            
+    <div class="row">
+        <div class="col-md-3">
+          <ul class="nav nav-pills nav-pills-icons flex-column nav-pills-danger" role="tablist">
+            <!--
+                                color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+                            -->
+            <li class="nav-item">
+              <a class="nav-link active show" href="#emotion" role="tab" data-toggle="tab" aria-selected="true">
+                <i class="material-icons">insert_emoticon</i>
+                Emotion Analysis
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#voice" role="tab" data-toggle="tab" aria-selected="false">
+                <i class="material-icons">record_voice_over</i>
+                Speech Recognition
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#api" role="tab" data-toggle="tab" aria-selected="false">
+                <i class="material-icons">api</i>
+                Extensability for third party systems
+              </a>
+            </li>
+          </ul>
         </div>
-            
-       
+        <div class="col-md-8">
+          <div class="tab-content">
+            <div class="tab-pane active show" id="emotion">
+              <img class="center" src="https://smileyanswers.com/wp-content/uploads/2019/03/HappyOrNot_Smileys_1100px.png" alt="Project Architecture Diagram" style="max-width:100%;
+                max-height:100%;"></img>
+              
+              <h3 data-toc-skip>Detects if a user is happy or not. The user can either talk to the mirror to ask for his/her emotion to be evaluated or use the available button.</h3>
+              
+              <h3 data-toc-skip>The emotion analysis is based on a photo of the user taken by the camera of the SmartMirror</h3>
+              
+              <br>
+              Image &copy; SmileyAnswers 
+            </div>
+            <div class="tab-pane" id="voice">
+              <h3 data-toc-skip>Users can interact with the SmartMirror using a convenient hands-free solution based on speech recognition.</h3><br>
+              
+              <h3 data-toc-skip>Currently supported commands are:
+                <ul>
+                  <li><code>Photo</code>: to take a photo of the user and analyze his/her current emotion</li>
+                  <li><code>Yes/No</code>: to accept the taken photo</li>
+                  <li><code>Weather</code>: to show the user the weather</li>
+                </ul>
+              </h3>
+            </div>
+            <div class="tab-pane" id="api">
+              <h3 data-toc-skip>The emotion analysis can be very useful for many purposes, including health use cases. Therefore, the system was developed having in mind the capability of being integrated with other third-party apps by using the developed API that allows for example medical professionals to access the users emotions.</h3>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
-    
+
+<!-- Demo -->
+<br>
+
+<div class="section" id="carousel">
+    <div id="what" style="text-align: center">
+        <div class="title" style="text-align: center">
+            <h2 id="intro"> </h2>
+            <h2>Demo</h2>
+            <h3>Video preview of our current system</h3>
+        </div>
+        <div class="container">
+            <video controls style="max-width:100%;
+          max-height:100%;">
+                <source src="{{site.assets}}/demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>

@@ -10,13 +10,78 @@ header-path: "images/tests.jpg"
 toc: true
 ---
 
-<div id="acceptance-tests">
+<div id="how">
     <div class="title" style="text-align: center">
-        <h2>Specification of tests</h2>
+        <h2>Specification</h2>
+        <h3 data-toc-skip>Personas and Scenarions</h3>
+        Based on a User Centered Design perspective, we defined the key personas and usage scenarios to define the acceptance criteria of our system. These criteria were the support for most of implemented tests, as described in the next section.
     </div>
 
-    TBA
 </div>
+
+<div id="how">
+    <div class="title" style="text-align: center">
+        <h3>Persona</h3>
+        <h4 data-toc-skip>Who will use our system and why</h4>
+    </div>
+
+    <div class="card-deck">
+        {% for persona in site.data.personas %}
+        <div class="card" style="width: 20rem;">
+            <a>
+                <img class="card-img-top" style="width: 100%;" src="{{ site.assets }}/images/persona/{{ persona.photo }}" alt="{{ persona.name }}">
+            </a>
+
+            <div class="card-header card-header-primary">
+                <a style="font-weight: bold">{{persona.name}}</a>
+                <p class="category">{{persona.description}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="font-weight: bold">Motivations:</li>
+                {% for characteristic in persona.characteristics %} 
+                    <li class="list-group-item">{{characteristic}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+<div id="how">
+<div class="title" style="text-align: center">
+    <h3>Usage Scenarios</h2>
+    <h4 data-toc-skip>How the system will be used</h4>
+</div>
+
+<div class="list-group">
+        <!--Table-->
+        <table id="tablePreview" class="table" style="table-layout:fixed">
+            <!--Table head-->
+            <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Scenario</th>
+                <th>Scenario Description</th>
+                <th>Scenario Status</th>
+            </tr>
+            </thead>
+            
+            <tbody>
+                {% for feature in site.data.scenarios %}
+                {% if feature.FEATURE-STATUS == ToDo %}
+                <tr>
+                    <th scope="row">{{ feature.FEATURE_TITLE }}<br>{{ feature.FEATURE_DESCRIPTION }}</th>
+                    <td>{{ feature.SCENARIO }} </td>
+                    <td>{{ feature.SCENARIO_DESCRIPTION }}</td>
+                    <td>{{ feature.SCENARIO_STATUS }}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        
+    </div>
+    
 
 <div id="acceptance-tests">
     <div class="title" style="text-align: center">
@@ -24,62 +89,10 @@ toc: true
     </div>
 
     TBA
-    Tests can be run ....
+
 </div>
 
 <br>
-
-    <div id="online">
-        <div class="title" style="text-align: center">
-            <h3>Tested online scenarios</h3>
-        </div>
-        
-        <div class="card-deck">
-            {% for test in site.data.tests %}
-            {% if test.online == false %}
-            <div class="card" style="width: 20rem;">
-                    <div class="card-header card-header-info">
-                        <a style="font-weight: bold">{{test.title}}</a>
-                        <p class="category">For: {{test.category}}</p>
-                    </div>
-                    
-                    <ul class="list-group list-group-flush">
-                        {% for step in test.steps %} 
-                        <li class="list-group-item">{{step}}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-                {% endfor %}
-            </div>    
-    </div>    
-        
-    <div id="offile">
-        <div class="title" style="text-align: center">
-                <h3>Tested offline scenarios</h3>
-        </div>
-
-        <br>
-            
-        <div class="card-deck">
-            {% for test in site.data.tests %}
-            {% if test.online == true %}
-        <div class="card" style="width: 20rem;">
-                <div class="card-header card-header-info">
-                    <a style="font-weight: bold">{{test.title}}</a>
-                    <p class="category">For: {{test.category}}</p>
-                </div>
-                
-                <ul class="list-group list-group-flush">
-                    {% for step in test.steps %} 
-                    <li class="list-group-item">{{step}}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% endif %}
-            {% endfor %}
-        </div>    
-    </div>    
 
 
 <div id="integration-tests">
